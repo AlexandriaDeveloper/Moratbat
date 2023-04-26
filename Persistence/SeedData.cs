@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain;
+using Domain.IdentityModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Persistence.Constants;
 
 namespace Persistence
 {
-    public class Seed
+    public partial class Seed
     {
         public static async Task SeedData(AppDataContext context, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
         {
@@ -59,5 +61,18 @@ namespace Persistence
 
 
         }
+
+
+        public static async Task SeedDataToTable(AppDataContext context, ModelBuilder builder)
+        {
+
+            var authUser = await context.Users.FirstOrDefaultAsync(x => x.UserName == "seagaull");
+
+            builder.Entity<BankModel>().HasData(DataInfo.BanksData(authUser));
+
+        }
+
     }
+
+
 }

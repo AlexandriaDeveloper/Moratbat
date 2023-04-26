@@ -1,0 +1,39 @@
+<div class="container">
+
+<div class="file-upload-container">
+  <div class="icon">
+    <img src="../../../assets/images/svg/cloud-upload.svg" alt="">
+    </div>
+  <input class="form-control"
+  type="file"
+  accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+  (change)="onChange($event)">
+
+<button mat-raised-button color = "primary" (click)="onUpload()" [disabled]="loading"
+class="btn btn-success">
+Upload
+</button>
+
+<div class="loading" *ngIf="loading">
+  <h3>Loading ...</h3>
+  <mat-spinner color="primary"></mat-spinner>
+
+  <mat-progress-bar class="progress-bar" mode="determinate"
+  [value]="uploadProgress" *ngIf="uploadProgress">
+
+</mat-progress-bar>
+<!--
+<mat-icon class="cancel-upload" (click)="cancelUpload()"
+*ngIf="uploadProgress">delete_forever</mat-icon> -->
+  </div>
+</div>
+</div>
+
+<div class="container text-center jumbotron"
+*ngIf="shortLink">
+<h2> Visit Here</h2>
+<a href="{{shortLink}}">{{shortLink}}</a>
+</div>
+
+
+

@@ -1,0 +1,52 @@
+
+.container{
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+ .icon{
+  position: relative;
+  top:-20px;
+  color: #fff;
+  text-align: center;
+  img{
+    border: 4px solid  rgba($color: #fff, $alpha: 0.8);
+    border-radius: 50px;
+    opacity: 0.8;
+  height: 100px;
+  width: 100px;
+  }
+ }
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .file-upload-container{
+    background-color: rgba(38,50.56 ,0.1);
+    background-color: rgba(0,0.0,0,0.3);
+    border :4px solid rgba($color: #fff, $alpha: 0.6);
+    border-radius: 25px;
+
+    padding: 130px;
+    .form-control{
+      background-color: rgba($color: #fff, $alpha: 0.6);
+      padding: 20px;
+      border-radius: 25px;
+      width: 380px;
+    }
+    .loading{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      .mat-mdc-progress-spinner{
+        position: relative;
+        top:-80px;
+        left: -100px;
+        width: 40px !important;
+      }
+
+    }
+  }
+}
+

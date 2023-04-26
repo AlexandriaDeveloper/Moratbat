@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Cairo';
+  src: url('./assets/fonts/Cairo-Regular.ttf');
+}
+:root {
+  --primary-color: #153d77;
+  --secondary-color: #6c757d;
+  --white-color: #fff;
+  --success-color: #198754;
+  --delete-color: #e22511;
+  --background-color: #f2f2f2;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.success-toaster {
+  color: white;
+  --mdc-snackbar-container-color: var(--success-color);
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+.fail-toaster{
+  max-width: max-content !important;
+  color: white;
+  --mdc-snackbar-container-color: var(--delete-color);
+  border-color: #f5c6cb;
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+.light-success-snackbar {
+  color: #155724;
+  --mdc-snackbar-container-color: #d4edda;
+
+  .mat-simple-snackbar-action {
+    color: darkgreen;
+  }
+}
+
+.light-error-snackbar {
+  color: #721c24;
+  --mdc-snackbar-container-color: #f8d7da;
+  border-color: #f5c6cb;
+  .mat-simple-snackbar-action {
+    color: darkred;
+  }
+}
+
+.info-toaster{
+  color: black;
+  --mdc-snackbar-container-color:  yellow;
+  border-color: #f5c6cb;
+  .mat-simple-snackbar-action {
+    color: darkred;
+  }
+}
+
+

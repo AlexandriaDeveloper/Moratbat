@@ -1,0 +1,54 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AngularMaterialModule } from './angular-material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TopNavBarComponent } from './components/layout/top-nav-bar/top-nav-bar.component';
+import { RouterModule } from '@angular/router';
+import { CardIconsComponent } from './components/layout/card-icons/card-icons.component';
+import { CustomeTableComponent } from './components/layout/table/custome-table/custome-table.component';
+import { SuccessToasterComponent } from './components/layout/toaster/success-toaster/success-toaster.component';
+import { FailToasterComponent } from './components/layout/toaster/fail-toaster/fail-toaster.component';
+import { InfoToasterComponent } from './components/layout/toaster/info-toaster/info-toaster.component';
+import { TableComponent } from './components/table/table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+
+
+@NgModule({
+  declarations: [
+    TopNavBarComponent,
+    CardIconsComponent,
+    CustomeTableComponent,
+    SuccessToasterComponent,
+    FailToasterComponent,
+    InfoToasterComponent,
+    TableComponent
+  ],
+  imports: [
+    CommonModule,
+    AngularMaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
+  ],
+  exports:[
+    AngularMaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    TopNavBarComponent,
+    CardIconsComponent,
+    CustomeTableComponent,
+    TableComponent
+
+
+  ],
+
+})
+export class SharedModule { }
+

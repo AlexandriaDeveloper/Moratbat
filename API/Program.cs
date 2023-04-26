@@ -7,14 +7,23 @@ using Microsoft.AspNetCore.Identity;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using API.Services;
+using System.Reflection;
+using Domain.IdentityModels;
+using Domain.Interfaces.Repository;
+using Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddApplicationServices(builder.Configuration);
-builder.Services.AddIdentityService(builder.Configuration);
+builder.Services.AddApplicationServices(builder.Configuration)
+.AddIdentityService(builder.Configuration)
+.AddPersistencService();
 
+
+
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddControllers(opt =>
 {
     //this will take care to authorize all controlers
@@ -25,6 +34,12 @@ builder.Services.AddControllers(opt =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var assembly = Assembly.GetExecutingAssembly();
+builder.Services.AddMediatR(config =>
+{
+    config.RegisterServicesFromAssembly(assembly);
+});
 var provider = builder.Services.BuildServiceProvider();
 try
 {
@@ -32,6 +47,7 @@ try
 
     var context = provider.GetRequiredService<AppDataContext>();
     await context.Database.MigrateAsync();
+
     var userManagaer = provider.GetRequiredService<UserManager<AppUser>>();
     var roleManagaer = provider.GetRequiredService<RoleManager<IdentityRole>>();
     await Seed.SeedData(context, userManagaer, roleManagaer);
@@ -43,6 +59,7 @@ catch (Exception ex)
     logger.LogError(ex, "An Error Occured During Migration");
 }
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -53,9 +70,11 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
+app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

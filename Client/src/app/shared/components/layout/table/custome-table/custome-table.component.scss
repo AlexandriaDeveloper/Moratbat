@@ -1,0 +1,73 @@
+.container{
+
+
+  .mat-mdc-table{
+
+    width: 60% !important;
+    // min-height: 70vh;
+     max-height: 80vh;
+    background-color:rgba(38, 50, 56, 0.1) !important;
+      .mat-mdc-header-cell{
+        font-weight: bolder;
+        font-family: Cairo;
+        color: #000 !important;
+        background-color: rgba($color: #fff, $alpha: .6)  ;
+      }
+      .mat-mdc-row{
+        background-color:rgba(38, 50, 56, 0.6) !important;
+          border: 1px solid #fff !important;
+          cursor: pointer;
+              .mat-mdc-cell{
+                font-family: Cairo;
+                color: #fff !important;
+                border-top: 2px solid  rgba($color: #fff, $alpha: .6);
+
+              }
+          }
+  }
+  mat-paginator{
+    background-color: rgba($color: #fff, $alpha: .6)  ;
+    color: #000 !important;
+
+
+
+  }
+}
+.table-row :hover {
+  background-color:   rgba($color: #fff, $alpha: .3) !important;
+}
+
+::ng-deep{
+      .mat-mdc-select-panel{
+        background-color:rgba(38, 50, 56, 0.9) !important;
+         .mdc-list-item{
+          &:hover{
+            background-color:   rgba($color: #fff, $alpha: .3) !important;
+            transition: 0.4s;
+          }
+        }
+        .mdc-list-item__primary-text{
+          color: #fff !important;
+        }
+      }
+    }
+    .mat-mdc-cell :hover{
+        color: #000 !important;
+
+      }
+
+      .mat-mdc-row .mat-mdc-cell {
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+        cursor: pointer;
+      }
+
+      .mat-mdc-row:hover .mat-mdc-cell {
+        background-color:   rgba($color: #000, $alpha: .4) !important;
+        transition: .4s ease-in-out;
+        color: #000 !important;
+
+      }
+
+
+

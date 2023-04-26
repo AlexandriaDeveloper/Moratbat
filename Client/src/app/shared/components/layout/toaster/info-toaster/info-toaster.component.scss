@@ -1,0 +1,27 @@
+.toaster-container{
+  display: flex;
+  flex-direction: column;
+
+  color: #000;
+   .error-header{
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+              img.close-icon{
+                position: relative;
+                top:-15px;
+                right: -15px;
+                  width: 30px;
+                  height: 30px;
+                  padding: 5px;
+                  cursor: pointer;
+                }
+    .header-msg{
+              font-size: larger;
+              font-weight: bolder;
+              display: flex;
+              justify-content: center;
+              color: #000;
+                }
+          }
+}

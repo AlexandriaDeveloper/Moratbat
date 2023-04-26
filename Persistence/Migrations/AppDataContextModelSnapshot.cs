@@ -22,7 +22,682 @@ namespace Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.AppUser", b =>
+            modelBuilder.Entity("Domain.BankBranchModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BankId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankId");
+
+                    b.ToTable("Branch");
+                });
+
+            modelBuilder.Entity("Domain.BankModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bank");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9381),
+                            Name = "البنك الاهلى المصرى"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9428),
+                            Name = "البنك التجارى الدولى"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9430),
+                            Name = " بنك مصر"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9433),
+                            Name = " بنك قطر الوطنى الاهلى"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9434),
+                            Name = " بنك HSBC"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.DepartmentModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Department");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9632),
+                            Name = "حسابات"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9636),
+                            Name = "البرنامج الدولى"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9638),
+                            Name = " مركز المؤتمرات"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9640),
+                            Name = " شئون العاملين"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9642),
+                            Name = "شئون عامه"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.EmployeeBankAccountModel", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BankId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmployeeAccountNumber")
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<DateTime?>("EndAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeId", "BankId");
+
+                    b.HasIndex("BankId");
+
+                    b.ToTable("EmployeeBankAccount");
+                });
+
+            modelBuilder.Entity("Domain.EmployeeDepartmentModel", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("EndAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeId", "DepartmentId");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("EmployeeDepartment");
+                });
+
+            modelBuilder.Entity("Domain.EmployeeGradeModel", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GradeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("EndAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeId", "GradeId");
+
+                    b.HasIndex("GradeId");
+
+                    b.ToTable("EmployeeGradeModel");
+                });
+
+            modelBuilder.Entity("Domain.EmployeeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Collage")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmailAddress")
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("NationalId")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
+
+                    b.Property<int>("PaymentMethodA")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentMethodB")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Qanon")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.Property<string>("TabCode")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<string>("TegaraCode")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("Domain.GradeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Qanon")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Grades");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9476),
+                            Name = "موظف",
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9480),
+                            Name = "كبير",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9482),
+                            Name = "درجة اولى",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9485),
+                            Name = "أ",
+                            ParentId = 3,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9487),
+                            Name = "ب ",
+                            ParentId = 3,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9490),
+                            Name = "درجة الثانيه",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9492),
+                            Name = "أ",
+                            ParentId = 6,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9495),
+                            Name = "ب ",
+                            ParentId = 6,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9497),
+                            Name = "درجة الثالثه",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9500),
+                            Name = "أ",
+                            ParentId = 9,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9503),
+                            Name = "ب ",
+                            ParentId = 9,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9505),
+                            Name = "ج ",
+                            ParentId = 9,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9507),
+                            Name = "درجة الرابعه",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9509),
+                            Name = "أ",
+                            ParentId = 13,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9512),
+                            Name = "ب ",
+                            ParentId = 13,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9514),
+                            Name = "درجة الخامسه",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9516),
+                            Name = "أ",
+                            ParentId = 16,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9519),
+                            Name = "ب ",
+                            ParentId = 16,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9522),
+                            Name = "درجة السادسه",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9524),
+                            Name = "أ",
+                            ParentId = 18,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9580),
+                            Name = "ب ",
+                            ParentId = 18,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9583),
+                            Name = "هيئة تدريس",
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9585),
+                            Name = "أستاذ متفرغ",
+                            ParentId = 22,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9588),
+                            Name = "أستاذ ",
+                            ParentId = 22,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9590),
+                            Name = "أستاذ مساعد",
+                            ParentId = 22,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9593),
+                            Name = "مدرس",
+                            ParentId = 22,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9595),
+                            Name = "مدرس مساعد",
+                            ParentId = 22,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
+                            CteaedAt = new DateTime(2023, 4, 24, 0, 4, 2, 439, DateTimeKind.Local).AddTicks(9597),
+                            Name = "معيد",
+                            ParentId = 22,
+                            Qanon = 1
+                        });
+                });
+
+            modelBuilder.Entity("Domain.IdentityModels.AppUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -51,6 +726,10 @@ namespace Persistence.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NationalId")
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -95,6 +774,36 @@ namespace Persistence.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.IdentityModels.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Expires")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Revoked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("RefreshToken");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -230,6 +939,92 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.BankBranchModel", b =>
+                {
+                    b.HasOne("Domain.BankModel", "Bank")
+                        .WithMany()
+                        .HasForeignKey("BankId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Bank");
+                });
+
+            modelBuilder.Entity("Domain.EmployeeBankAccountModel", b =>
+                {
+                    b.HasOne("Domain.BankBranchModel", "Bank")
+                        .WithMany("Employees")
+                        .HasForeignKey("BankId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.EmployeeModel", "Employee")
+                        .WithMany("BankAccount")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Bank");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Domain.EmployeeDepartmentModel", b =>
+                {
+                    b.HasOne("Domain.DepartmentModel", "Department")
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.EmployeeModel", "Employee")
+                        .WithMany("Department")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Domain.EmployeeGradeModel", b =>
+                {
+                    b.HasOne("Domain.EmployeeModel", "Employee")
+                        .WithMany("Grade")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.GradeModel", "Grade")
+                        .WithMany("Employees")
+                        .HasForeignKey("GradeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Grade");
+                });
+
+            modelBuilder.Entity("Domain.GradeModel", b =>
+                {
+                    b.HasOne("Domain.GradeModel", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId");
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("Domain.IdentityModels.RefreshToken", b =>
+                {
+                    b.HasOne("Domain.IdentityModels.AppUser", "AppUser")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -241,7 +1036,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Domain.AppUser", null)
+                    b.HasOne("Domain.IdentityModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -250,7 +1045,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Domain.AppUser", null)
+                    b.HasOne("Domain.IdentityModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -265,7 +1060,7 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.AppUser", null)
+                    b.HasOne("Domain.IdentityModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -274,11 +1069,40 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Domain.AppUser", null)
+                    b.HasOne("Domain.IdentityModels.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.BankBranchModel", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("Domain.DepartmentModel", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("Domain.EmployeeModel", b =>
+                {
+                    b.Navigation("BankAccount");
+
+                    b.Navigation("Department");
+
+                    b.Navigation("Grade");
+                });
+
+            modelBuilder.Entity("Domain.GradeModel", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("Domain.IdentityModels.AppUser", b =>
+                {
+                    b.Navigation("RefreshTokens");
                 });
 #pragma warning restore 612, 618
         }
