@@ -1,5 +1,6 @@
 namespace Application.Common
 {
+#nullable enable
     public class Error
 
     // : IEquatable<Error>

@@ -13,7 +13,7 @@ import { catchError,filter,map,switchMap, take, tap } from 'rxjs/operators';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { NavigationExtras, Router } from '@angular/router';
 import { AccountService } from 'src/app/account/account.service';
-import { EventBusService } from 'src/app/shared/services/event-bus.service';
+// import { EventBusService } from 'src/app/shared/services/event-bus.service';
 import { EventData } from 'src/app/shared/models/eventData';
 
 @Injectable()
@@ -24,8 +24,8 @@ export class ErrorInterceptor implements HttpInterceptor {
   constructor(
     private router :Router,
      private accountService : AccountService,
-     private localStorageService : LocalstorageService,
-     private eventBusService : EventBusService) {}
+     private localStorageService : LocalstorageService
+   ) {}
 
 
 
@@ -67,7 +67,6 @@ export class ErrorInterceptor implements HttpInterceptor {
       if (this.localStorageService.isLoggedIn()) {
         return this.accountService.refreshToken().pipe(
           switchMap((token) => {
-            console.log(token);
             this.isRefreshing = false;
            this.localStorageService.saveUser(token);
            this.refreshTokenSubject.next(token.token);
@@ -87,9 +86,8 @@ export class ErrorInterceptor implements HttpInterceptor {
       return this.refreshTokenSubject.pipe(
        // tap(t => console.log(t)),
         filter(token => token !== null),
-        take(1),
+        take(2),
         switchMap((token) =>{
-          console.log(token);
           return next.handle(this.addTokenHeader(request, token))
         }))
 

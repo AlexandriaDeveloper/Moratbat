@@ -1,0 +1,47 @@
+<div class="dialog-container">
+  <div mat-icon-button  class="close-button" (click)="onNoClick()">
+
+  <mat-icon>close</mat-icon>
+
+
+  </div>
+  <app-employee-details-dialog (employeeEvent)="getEmployeeByCodeEventHandler($event)" ></app-employee-details-dialog>
+  <div *ngIf="employee" style="padding-left: 5px;">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div>
+  <mat-form-field>
+    <input matInput placeholder="label" [value]="getQanonText()" disabled>
+  </mat-form-field>
+
+    <mat-form-field class="drop-down-primary" >
+      <mat-select placeholder="الوظيفه ...." class="drop-down-primary" (selectionChange)="gradeChanege($event)" >
+        <mat-option *ngFor="let p of grades" [value]="p.id" color="primary">
+          {{ p.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<div>
+      <mat-form-field style="width: 100%;">
+        <input matInput  [matDatepicker]="myDatepicker1" placeholder="تاريخ الحصول على الدرجة" (dateChange)="addStartDate($event.target)" >
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field  style="width: 100%;">
+        <input matInput  [matDatepicker]="myDatepicker2" placeholder="تاريخ انتهاء الدرجة"  (dateChange)="addEndDate($event.target)" >
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker2"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div style="display: flex ;justify-content: center;">
+      <button mat-raised-button color="primary" [disabled]="form.invalid">
+      جفظ
+    </button>
+  </div>
+
+  </form>
+  </div>
+
+</div>

@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
@@ -102,7 +104,7 @@ namespace Persistence.Migrations
                     NationalId = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
                     EmailAddress = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: true),
-                    Collage = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Collage = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     PaymentMethodA = table.Column<int>(type: "int", nullable: false),
                     PaymentMethodB = table.Column<int>(type: "int", nullable: false),
                     Qanon = table.Column<int>(type: "int", maxLength: 20, nullable: false),
@@ -333,7 +335,7 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EmployeeGradeModel",
+                name: "EmployeeGrade",
                 columns: table => new
                 {
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
@@ -349,15 +351,15 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EmployeeGradeModel", x => new { x.EmployeeId, x.GradeId });
+                    table.PrimaryKey("PK_EmployeeGrade", x => new { x.EmployeeId, x.GradeId });
                     table.ForeignKey(
-                        name: "FK_EmployeeGradeModel_Employee_EmployeeId",
+                        name: "FK_EmployeeGrade_Employee_EmployeeId",
                         column: x => x.EmployeeId,
                         principalTable: "Employee",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_EmployeeGradeModel_Grades_GradeId",
+                        name: "FK_EmployeeGrade_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
                         principalColumn: "Id",
@@ -395,6 +397,59 @@ namespace Persistence.Migrations
                         principalTable: "Employee",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Bank",
+                columns: new[] { "Id", "CreatedBy", "CteaedAt", "DeletedBy", "DeleteddAt", "Name", "UpdatedAt", "UpdatedBy" },
+                values: new object[,]
+                {
+                    { 1, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9718), null, null, "البنك الاهلى المصرى", null, null },
+                    { 2, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9762), null, null, "البنك التجارى الدولى", null, null },
+                    { 3, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9764), null, null, " بنك مصر", null, null },
+                    { 4, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9766), null, null, " بنك قطر الوطنى الاهلى", null, null },
+                    { 5, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9768), null, null, " بنك HSBC", null, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Department",
+                columns: new[] { "Id", "CreatedBy", "CteaedAt", "DeletedBy", "DeleteddAt", "Name", "UpdatedAt", "UpdatedBy" },
+                values: new object[,]
+                {
+                    { 1, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9884), null, null, "حسابات", null, null },
+                    { 2, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9888), null, null, "البرنامج الدولى", null, null },
+                    { 3, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9890), null, null, " مركز المؤتمرات", null, null },
+                    { 4, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9892), null, null, " شئون العاملين", null, null },
+                    { 5, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9894), null, null, "شئون عامه", null, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Grades",
+                columns: new[] { "Id", "CreatedBy", "CteaedAt", "DeletedBy", "DeleteddAt", "Name", "ParentId", "Qanon", "UpdatedAt", "UpdatedBy" },
+                values: new object[,]
+                {
+                    { 1, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9804), null, null, "موظف", null, 0, null, null },
+                    { 16, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9840), null, null, "هيئة تدريس", null, 1, null, null },
+                    { 2, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9807), null, null, "كبير", 1, 0, null, null },
+                    { 3, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9810), null, null, "درجة اولى-أ", 1, 0, null, null },
+                    { 4, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9812), null, null, "درجة اولى-ب", 1, 0, null, null },
+                    { 5, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9814), null, null, "درجة الثانيه-أ", 1, 0, null, null },
+                    { 6, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9817), null, null, "درجة الثانيه-ب", 1, 0, null, null },
+                    { 7, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9819), null, null, "درجة الثالثه-أ", 1, 0, null, null },
+                    { 8, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9822), null, null, "درجة الثالثه-ب", 1, 0, null, null },
+                    { 9, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9824), null, null, "درجة الثالثه-ج", 1, 0, null, null },
+                    { 10, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9827), null, null, "درجة الرابعه-أ", 1, 0, null, null },
+                    { 11, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9829), null, null, "درجة الرابعه-ب", 1, 0, null, null },
+                    { 12, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9831), null, null, "درجة الخامسه-أ", 1, 0, null, null },
+                    { 13, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9833), null, null, "درجة الخامسه-ب", 1, 0, null, null },
+                    { 14, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9836), null, null, "درجة السادسه-أ", 1, 0, null, null },
+                    { 15, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9838), null, null, "درجة السادسه-ب", 1, 0, null, null },
+                    { 17, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9842), null, null, "أستاذ متفرغ", 16, 1, null, null },
+                    { 18, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9845), null, null, "أستاذ ", 16, 1, null, null },
+                    { 19, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9848), null, null, "أستاذ مساعد", 16, 1, null, null },
+                    { 20, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9850), null, null, "مدرس", 16, 1, null, null },
+                    { 21, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9852), null, null, "مدرس مساعد", 16, 1, null, null },
+                    { 22, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9854), null, null, "معيد", 16, 1, null, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -452,8 +507,8 @@ namespace Persistence.Migrations
                 column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EmployeeGradeModel_GradeId",
-                table: "EmployeeGradeModel",
+                name: "IX_EmployeeGrade_GradeId",
+                table: "EmployeeGrade",
                 column: "GradeId");
 
             migrationBuilder.CreateIndex(
@@ -492,7 +547,7 @@ namespace Persistence.Migrations
                 name: "EmployeeDepartment");
 
             migrationBuilder.DropTable(
-                name: "EmployeeGradeModel");
+                name: "EmployeeGrade");
 
             migrationBuilder.DropTable(
                 name: "RefreshToken");

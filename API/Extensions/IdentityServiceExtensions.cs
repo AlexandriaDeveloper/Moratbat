@@ -21,6 +21,21 @@ namespace API.Extensions
         public static IServiceCollection AddIdentityService(this IServiceCollection services, IConfiguration config)
         {
 
+
+            services.AddCors(opt =>
+            {
+
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+                    .WithExposedHeaders("WWW-Authenticate")
+                    .WithOrigins("http://localhost:4200");
+                });
+            });
+            ;
+
             services.Configure<JWT>(config.GetSection("JWT"));
             services.AddIdentityCore<AppUser>(opt =>
             {
@@ -57,6 +72,7 @@ namespace API.Extensions
 
             // services.AddAuthorization();
 
+            services.AddScoped<IAuthService, AuthService>();
 
             services.AddScoped<TokenService>(s => new TokenService(config));
             return services;

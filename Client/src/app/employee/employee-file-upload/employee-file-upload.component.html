@@ -1,19 +1,56 @@
 <div class="container">
 
 <div class="file-upload-container">
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <div class="drop-down-group" >
+    <div class="drop-down-primary">
+      <mat-form-field class="drop-down-primary">
+        <mat-select placeholder="كلية ...." class="drop-down-primary"   formControlName="collage" >
+          <mat-option *ngFor="let collage of collages" [value]="collage" color="primary">
+            {{ collage }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+<div class="drop-down-primary">
+  <mat-form-field class="drop-down-primary">
+    <mat-select placeholder="قانون ...." class="drop-down-primary"  [(value)]="selectedQanon"   formControlName="qanon" >
+      <mat-option *ngFor="let q of qanon" [value]="q.value" color="primary">
+        {{ q.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+
+<div class="drop-down-primary">
+  <mat-form-field class="drop-down-primary">
+    <mat-select placeholder="الوظيفه ...." class="drop-down-primary"   formControlName="position" >
+      <mat-option *ngFor="let p of position" [value]="p" color="primary">
+        {{ p }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+  </div>
   <div class="icon">
     <img src="../../../assets/images/svg/cloud-upload.svg" alt="">
     </div>
+
   <input class="form-control"
+
   type="file"
   accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
   (change)="onChange($event)">
 
-<button mat-raised-button color = "primary" (click)="onUpload()" [disabled]="loading"
-class="btn btn-success">
+<button  color = "primary" type="submit"
+
+[disabled]="uploadForm.invalid"
+class="btn btn-success btn-upload">
 Upload
 </button>
 
+  </form>
 <div class="loading" *ngIf="loading">
   <h3>Loading ...</h3>
   <mat-spinner color="primary"></mat-spinner>

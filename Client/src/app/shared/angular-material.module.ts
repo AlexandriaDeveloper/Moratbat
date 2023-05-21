@@ -22,6 +22,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 //import { MatMomentDateModule } from '@angular/material-moment-adapter';
 @NgModule({
   declarations: [],
@@ -52,7 +53,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatDividerModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
    // MatMomentDateModule
   ]
 })

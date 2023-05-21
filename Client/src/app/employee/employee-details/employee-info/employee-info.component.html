@@ -1,0 +1,54 @@
+
+<mat-card  *ngIf="employee">
+  <mat-card-header>
+    <mat-card-title>اسم الموظف :  {{employee?.name}}</mat-card-title>
+    <mat-card-subtitle style="color: #fff;"> -الدرجة الوظيفيه : درجة ثالثه- مكافاة شامله</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content >
+<div class="employee-card-content">
+<div class="left">
+    <div>
+     الكليه  : {{employee?.collage}}
+    </div>
+  <div>
+    كود طب : {{employee.tabCode}}
+   </div>
+   <div>
+    كود تجارة : {{employee.tegaraCode}}
+   </div>
+   <div>
+    الرقم القومى  : {{employee.nationalId}}
+   </div>
+
+
+
+
+</div>
+<div class="right">
+  <div  >
+<ng-container *ngIf="employee.qanon==='Qanon81'">
+  قانون:  الخدمه المدنيه
+</ng-container>
+<ng-container *ngIf="employee.qanon==='Qanon49'">
+  قانون:   تنظيم الجامعات
+</ng-container>
+<ng-container *ngIf="!employee.qanon">
+غير محدد
+</ng-container>
+     </div>
+  <div>
+   <!-- الدرجة الوظيفيه: {{employee.position}} -->
+   </div>
+   <div>
+   رقم الهاتف: {{employee.phoneNumber}}
+   </div>
+   <div>
+  البريد الالكترونى : {{employee.emailAddress}}
+   </div>
+
+
+</div>
+</div>
+  </mat-card-content>
+
+</mat-card>

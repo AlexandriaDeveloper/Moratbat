@@ -12,18 +12,23 @@ using System.Reflection;
 using Domain.IdentityModels;
 using Domain.Interfaces.Repository;
 using Persistence.Repositories;
+using Application.Features.Employees.Queries.GetEmployees;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddApplicationServices(builder.Configuration)
+
+builder.Services
+.AddApplicationServices(builder.Configuration)
 .AddIdentityService(builder.Configuration)
-.AddPersistencService();
+.AddPersistencService(builder.Configuration)
+
+;
 
 
 
-builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddControllers(opt =>
 {
     //this will take care to authorize all controlers
@@ -36,10 +41,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var assembly = Assembly.GetExecutingAssembly();
-builder.Services.AddMediatR(config =>
-{
-    config.RegisterServicesFromAssembly(assembly);
-});
+
 var provider = builder.Services.BuildServiceProvider();
 try
 {

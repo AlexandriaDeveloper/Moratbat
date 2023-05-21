@@ -19,8 +19,8 @@ $my-app-typography: mat.define-typography-config(
 // hue. Available color palettes: https://material.io/design/color/
 
 
-$Client-primary: mat.define-palette(mat.$blue-gray-palette,900,A100,A400);
-$Client-accent: mat.define-palette(mat.$teal-palette, 900, A700, A400);
+$Client-primary: mat.define-palette(mat.$green-palette,900,A100,A400);
+$Client-accent: mat.define-palette(mat.$orange-palette, 900, A700, A400);
 
 // The warn palette is optional (defaults to red).
 $Client-warn: mat.define-palette(mat.$red-palette);
@@ -52,6 +52,43 @@ mat-sidenav .active{
     text-align: center;
     }
   }
+  .mat-mdc-option .mdc-list-item__primary-text{
+
+    background-color: red !important;
+
+  }
+.drop-down-primary{
+
+
+
+  span{
+    color:  #fff !important
+  }
+
+.mat-mdc-option-active{
+  span{
+  color: #000000 !important;}
+
+}
+
+  .mdc-text-field--filled:not(.mdc-text-field--disabled){
+    border-radius: 5px;
+    background-color: rgba(33, 42, 43,1) !important;
+    .mat-mdc-select-arrow{
+      color: rgba(255, 255, 255,.8)  !important;
+    }
+    .mat-mdc-option.mdc-list-item {
+      background-color: red !important;
+    }
+  }
+  .mat-mdc-select-panel{
+    background-color: rgba(33, 42, 43,1) !important;
+  }
+  mat-option{
+    background-color: rgba(33, 42, 43,1) !important;
+  }
+
+}
 
 
 }

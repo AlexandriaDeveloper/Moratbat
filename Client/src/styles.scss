@@ -59,4 +59,87 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 }
 
+ .mat-mdc-option.mat-mdc-option-active{
+
+    color: #000000 !important;
+    background-color: #bf4a09 !important;
+
+
+}
+
+    .mat-mdc-option{
+      color: #000000 !important;
+     // background-color: red !important;
+
+    }
+    .cdk-overlay-pane:not(.mat-mdc-select-panel-above) .mdc-menu-surface.mat-mdc-select-panel{
+      color: #000000 !important;
+      background-color: #212b2e !important;
+    }
+.mat-mdc-select-panel{
+
+  color: #000000 !important;
+  background-color: #212b2e !important;
+}
+    .mat-mdc-option:hover:not(.mdc-list-item--disabled){
+      background-color: rgba(191, 74, 9,.8) !important;
+      color:#000000 !important;
+
+  }
+  .mat-mdc-select-value-text{
+    span{
+color: #000000 !important;}
+  }
+  .mat-mdc-select-placeholder{
+    color: rgba($color: #000000, $alpha: .5) !important
+  }
+  .close-button{
+    .mat-icon{
+    position: absolute;
+    top:10px;
+    right: 10px;
+
+    color :#fff;
+    background-color: #198754;
+    padding: 5px;
+    border-radius: 40px;
+    transition: 0.6s;
+
+    &:hover{
+      transition: 0.6s;
+      transform: rotate(180deg);
+      font-weight: bolder;
+      // color :red;
+      // background-color:rgb(32 41 42 / 60%);
+
+      background-color: #bf4a09;
+      color: #fff;
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+
+    }
+
+
+  }
+  .mat-calendar-header{
+
+    background-color: rgba(191, 74, 9,1) !important;
+    *{
+    //  color:  rgba(189, 100, 52, 0.9) !important;
+      color: #fff
+
+    }
+    .mat-calendar-controls .mat-mdc-icon-button.mat-mdc-button-base{
+      color: #fff;
+    }
+    .mat-calendar-body-label{
+      color: #fff;
+    }
+  }
+
+  .mat-datepicker-content {
+
+    background-color: rgba(32, 41, 42, 1) !important  ;
+  }
 

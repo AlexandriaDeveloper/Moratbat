@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from './employee.service';
+import { EmployeeService } from '../shared/services/features/employee.service';
 import { ToasterService } from '../shared/services/toaster.service';
 
 @Component({
@@ -14,9 +14,10 @@ data:string[];
 this.loadEmployees();
   }
   loadEmployees(){
-    this.employeeService.getEmployees().subscribe( (x:string[]) => this.data =x);
+  //  this.employeeService.getEmployees().subscribe( (x:string[]) => this.data =x);
   }
   openSuccessSnack(){
+
     //this.toasterService.openSuccessToaster();
     this.toasterService.openSuccessToaster('يوجد خطأ ');
   }

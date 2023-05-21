@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain
 {
+    [Table("EmployeeGrade")]
     public class EmployeeGradeModel : BaseEntityModel
     {
         [NotMapped]
@@ -15,6 +16,9 @@ namespace Domain
         public int GradeId { get; set; }
         public DateTime StartFrom { get; set; }
         public DateTime? EndAt { get; set; }
+        [NotMapped]
+        public bool IsActive => EndAt.HasValue ? false : true;
+
 
 
         public EmployeeModel Employee { get; set; }

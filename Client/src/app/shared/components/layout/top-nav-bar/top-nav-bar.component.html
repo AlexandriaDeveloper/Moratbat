@@ -80,14 +80,13 @@ document.createElement('video');
 
 
 
-<div>
+
 
   <div class="layout-container">
-
-  <router-outlet></router-outlet>
+    <ng-content></ng-content>
   </div>
 
-</div>
+
 
 
 
@@ -107,7 +106,7 @@ document.createElement('video');
 
   <mat-nav-list class="list" >
     <a mat-list-item [routerLink]="['/employee']" routerLinkActive="active" > <mat-icon>people</mat-icon> الموظفين  </a>
-    <a mat-list-item [routerLink]="['/']"  routerLinkActive="active" >  <mat-icon>receipt</mat-icon> ملفات الاوامر  </a>
+    <a mat-list-item [routerLink]="['/order']"  routerLinkActive="active" >  <mat-icon>receipt</mat-icon> ملفات الاوامر  </a>
     <a mat-list-item  [routerLink]="['/bank']" routerLinkActive="active" > <mat-icon>home_work</mat-icon> البنوك  </a>
     <a mat-list-item  [routerLink]="['/bank']" routerLinkActive="active" >
       <img src="./../../../../../assets/images/svg/bill.svg" alt="" style="width: 20px;height: 20px;position: relative;top: 5px;">

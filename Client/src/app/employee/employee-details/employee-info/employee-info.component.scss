@@ -1,0 +1,21 @@
+mat-card{
+  background-color: rgba(32 ,41 ,42 ,0.8) !important;
+
+  color: #fff !important;
+  border: 4px solid rgba($color: #fff, $alpha: 0.6);
+  .employee-card-content{
+    padding:15px 10px;
+    font-size: 16px;
+    font-family: Cairo;
+    display: flex;
+    justify-content:space-around;
+    flex-wrap:reverse;
+    flex: 3 0 500%;
+  }
+.left {
+  flex: 30%;
+}
+.right{
+  flex:20%
+}
+}

@@ -8,10 +8,11 @@ using Domain;
 using Domain.Constants;
 using Persistence;
 using Domain.Interfaces.Repository;
+using Application.Features.Employees.Queries.GetEmployees;
 
 namespace Application.Features.Employees.Commands.UploadFile
 {
-    public record UploadEmployeeCommand(IFormFile file) : ICommand;
+    public record UploadEmployeeCommand(EmployeeFileUploadDto file) : ICommand;
     public class UploadEmployeeCommandHandler : ICommandHandler<UploadEmployeeCommand>
     {
         private readonly INPOIService _npoi;
@@ -27,26 +28,27 @@ namespace Application.Features.Employees.Commands.UploadFile
             if (request.file == null)
                 return Result.Failure(new Error("404", " الملف غير موجود "));
 
-            var tempPath = await CopyFile(request.file);
+            var tempPath = await CopyFile(request.file.File);
             DataTable dt = _npoi.ReadFile(tempPath, "Sheet1");
-            await DataTableToEntityAsync(dt);
+            await DataTableToEntityAsync(dt, request.file);
             await _context.SaveChangesAsync(cancellationToken);
             return Result.Success();
         }
 
-        private async Task<List<EmployeeModel>> DataTableToEntityAsync(DataTable dt)
+        private async Task<List<EmployeeModel>> DataTableToEntityAsync(DataTable dt, EmployeeFileUploadDto request)
         {
 
             List<EmployeeModel> Employees = new List<EmployeeModel>();
             foreach (DataRow Row in dt.Rows)
             {
-                if (_context.EmployeeRepo.GetQueryable().Any(t => t.NationalId == Row.ItemArray[6].ToString())) continue;
+                if (_context.EmployeeRepo.GetQueryable().Any(t => t.NationalId == Row.ItemArray[5].ToString()))
+                    continue;
                 var employee = new EmployeeModel();
                 employee.Name = Row.ItemArray[4].ToString();
-                employee.TegaraCode = Row.ItemArray[0].ToString();
-                employee.TabCode = Row.ItemArray[1].ToString();
-                employee.NationalId = Row.ItemArray[6].ToString();
-                if (Row.ItemArray[2].ToString() == "بطاقة")
+                employee.TegaraCode = Row.ItemArray[1].ToString();
+                employee.TabCode = Row.ItemArray[0].ToString();
+                employee.NationalId = Row.ItemArray[5].ToString();
+                if (Row.ItemArray[3].ToString() == "بطاقة")
                 {
                     employee.PaymentMethodA = PaymentMethodEnum.Atm;
                 }
@@ -54,8 +56,8 @@ namespace Application.Features.Employees.Commands.UploadFile
                 {
                     employee.PaymentMethodA = PaymentMethodEnum.BankTransfer;
                 }
-                employee.Collage = CollagesConstants.TAB;
-                employee.Qanon = QanonEnum.Qanon81;
+                employee.Collage = request.Collage;
+                employee.Qanon = request.Qanon;
                 employee.Position = EmployeePositionEnum.Employee;
                 Employees.Add(employee);
             }

@@ -31,7 +31,7 @@ namespace API.DTOs
         public string ProfileImage { get; set; }
         public string Token { get; set; }
         [JsonIgnore]
-        public string? RefreshToken { get; set; }
+        public string RefreshToken { get; set; }
         public DateTime RefreshTokenExpiration { get; set; }
     }
 
@@ -40,7 +40,7 @@ namespace API.DTOs
 
     public class AuthModel
     {
-        public string? Message { get; set; }
+        public string Message { get; set; }
         public bool IsAuthenticated { get; set; }
         public string Username { get; set; }
         public string DisplayName { get; set; }
@@ -50,7 +50,7 @@ namespace API.DTOs
         public string Token { get; set; }
         //  public DateTime Expires { get; set; }
         [JsonIgnore]
-        public string? RefreshToken { get; set; }
+        public string RefreshToken { get; set; }
         public DateTime RefreshTokenExpiration { get; set; }
     }
 
@@ -85,7 +85,7 @@ namespace API.DTOs
     }
     public class RevokeTokenModel
     {
-        public string? Token { get; set; }
+        public string Token { get; set; }
     }
 }
 

@@ -1,3 +1,7 @@
 <div class="custom-theme" style="height: 1080px">
-<app-top-nav-bar class="nav-bar"></app-top-nav-bar>
+<app-top-nav-bar class="nav-bar">
+<div  [@routeAnimations]="getRouteAnimationData()">
+  <router-outlet></router-outlet>
+</div>
+</app-top-nav-bar>
 </div>

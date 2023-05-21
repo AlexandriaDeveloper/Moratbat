@@ -11,9 +11,13 @@ namespace Persistence.Repositories
         private readonly AppDataContext _context;
 
         private IEmployeeRepository _employeeRepository;
+        private IEmployeeGradeRepository _employeeGradeRepository;
+        private IGradeRepository _gradeRepository;
         //internal GenericRepository<EmployeeModel> EmployeeRepo => _employeeRepository ?? new EmployeeRepository(_context, _userManager);
 
         public IEmployeeRepository EmployeeRepo => _employeeRepository ?? new EmployeeRepository(_context, _userManager, _accessor);
+        public IEmployeeGradeRepository EmployeeGradeRepo => _employeeGradeRepository ?? new EmployeeGradeRepository(_context, _userManager, _accessor);
+        public IGradeRepository GradeRepo => _gradeRepository ?? new GradeRepository(_context, _userManager, _accessor);
 
 
 

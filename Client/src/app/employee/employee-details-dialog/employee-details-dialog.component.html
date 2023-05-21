@@ -1,0 +1,41 @@
+<div>
+  <form  [formGroup]="employeeCodeForm" (ngSubmit)="onSubmit()">
+    <div class="search-container">
+
+      <div class="drop-down-primary">
+        <mat-form-field appearance="fill" class="drop-down-primary">
+
+        <mat-select placeholder="اختار نوع الكود ....." formControlName="searchBy">
+          <mat-option *ngFor="let s of searchBy" [value]="s.value">
+            {{s.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      </div>
+      <div class="code">
+
+          <mat-form-field class="example-full-width" >
+
+            <input matInput placeholder="ادخل الكود" formControlName="code">
+          </mat-form-field>
+      </div>
+      <div >
+        <button matRipple  type="submit"  class="search-button" [disabled]="employeeCodeForm.invalid">
+
+          بحث ....
+        </button>
+      </div>
+    </div>
+    <div class="search-body" *ngIf="employee">
+        <div>
+          الاسم :{{ employee.name}}
+        </div>
+
+
+    </div>
+    </form>
+
+
+</div>

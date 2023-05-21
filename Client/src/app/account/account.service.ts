@@ -28,8 +28,6 @@ export class AccountService {
 
     return this.http.get<User>(this.baseUrl+'account/getCurrentUser').pipe(
     map(user =>{
-    //localStorage.setItem(USER_KEY, JSON.stringify( user));
-console.log(user);
      this.localStorageService.saveUser(user);
     this.currentUserSource.next(user);})
     )

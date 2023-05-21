@@ -68,7 +68,7 @@ namespace Persistence
 
             var authUser = await context.Users.FirstOrDefaultAsync(x => x.UserName == "seagaull");
 
-            builder.Entity<BankModel>().HasData(DataInfo.BanksData(authUser));
+            builder.Entity<BankModel>().HasData(DataInfo.BanksData(authUser!));
 
         }
 

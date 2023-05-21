@@ -10,25 +10,39 @@ namespace Persistence.Constants
 
         public static string MOZAF = "موظف";
         public static string KABIR = "كبير";
-        public static string AWLA = "درجة اولى";
-        public static string TANIA = "درجة الثانيه";
-
-        public static string TALTA = "درجة الثالثه";
-        public static string RABAA = "درجة الرابعه";
-        public static string KHAMSA = "درجة الخامسه";
-        public static string SADSA = "درجة السادسه";
+        public static string AWLA_A = "درجة اولى-أ";
+        public static string AWLA_B = "درجة اولى-ب";
+        public static string TANIA_A = "درجة الثانيه-أ";
+        public static string TANIA_B = "درجة الثانيه-ب";
+        public static string TALTA_A = "درجة الثالثه-أ";
+        public static string TALTA_B = "درجة الثالثه-ب";
+        public static string TALTA_C = "درجة الثالثه-ج";
+        public static string RABAA_A = "درجة الرابعه-أ";
+        public static string RABAA_B = "درجة الرابعه-ب";
+        public static string KHAMSA_A = "درجة الخامسه-أ";
+        public static string KHAMSA_B = "درجة الخامسه-ب";
+        public static string SADSA_A = "درجة السادسه-أ";
+        public static string SADSA_B = "درجة السادسه-ب";
 
         public static List<string> GetEmAll()
         {
             List<string> results = new List<string>();
             results.Add(MOZAF);
             results.Add(KABIR);
-            results.Add(AWLA);
-            results.Add(TANIA);
-            results.Add(TALTA);
-            results.Add(RABAA);
-            results.Add(KHAMSA);
-            results.Add(SADSA);
+            results.Add(AWLA_A);
+            results.Add(AWLA_B);
+            results.Add(TANIA_A);
+            results.Add(TANIA_B);
+            results.Add(TALTA_A);
+            results.Add(TALTA_B);
+            results.Add(TALTA_C);
+            results.Add(RABAA_A);
+            results.Add(RABAA_B);
+            results.Add(KHAMSA_A);
+            results.Add(KHAMSA_B);
+            results.Add(SADSA_A);
+            results.Add(SADSA_B);
+
 
             return results;
         }

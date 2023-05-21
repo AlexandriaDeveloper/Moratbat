@@ -4,6 +4,7 @@ using Domain.Constants;
 
 namespace Domain
 {
+#nullable enable
     [Table("Employee")]
     public class EmployeeModel : BaseEntityModel
     {
@@ -13,14 +14,14 @@ namespace Domain
         public string? TegaraCode { get; set; }
         [MaxLength(14), MinLength(14)]
         [Required]
-        public string NationalId { get; set; }
+        public string NationalId { get; set; } = string.Empty;
         [MaxLength(16)]
         public string? PhoneNumber { get; set; }
         [MaxLength(16)]
         [EmailAddress]
         public string? EmailAddress { get; set; }
         [MaxLength(50)]
-        public string Collage { get; set; }
+        public string Collage { get; set; } = string.Empty;
         public PaymentMethodEnum PaymentMethodA { get; set; }
         public PaymentMethodEnum PaymentMethodB { get; set; }
         [MaxLength(20)]

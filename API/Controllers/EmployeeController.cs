@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using API.Helper.Response;
-using Application.Common;
+
 using Application.Features.Employees.Commands.UploadFile;
+using Application.Features.Employees.Queries.GetEmployeeBasicInfo;
+using Application.Features.Employees.Queries.GetEmployeeBasicInfoByCode;
+using Application.Features.Employees.Queries.GetEmployees;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Persistence.Constants;
 
 namespace API.Controllers;
 [Authorize]
@@ -23,10 +20,8 @@ public class EmployeeController : BaseApiController
         //   _logger = logger;
     }
 
-    [HttpPost("fileUpload")]
-
-
-    public async Task<IActionResult> FileUpload([FromForm] IFormFile file)
+    [HttpPost("employeeFileUpload")]
+    public async Task<IActionResult> FileUpload([FromForm] EmployeeFileUploadDto file)
     {
 
         var result = await _mediator.Send(new UploadEmployeeCommand(file));
@@ -39,23 +34,37 @@ public class EmployeeController : BaseApiController
     }
 
     [HttpGet("getEmployees")]
-    public async Task<IActionResult> GetEmployees()
+    public async Task<IActionResult> GetEmployees([FromQuery] EmployeeParam param)
     {
-        List<string> result2 = new List<string>() { "mohamed", "ahmed", "sara" };
-        //  var result = Result<string>.Failure(new Error("1", "test code"));
-        var result = Result<string>.Success(result2);
-
+        var result = await _mediator.Send(new GetEmployeesQuery(param));
         if (result.IsFailure)
         {
             return HandleFailureResult(result);
-
         }
-
-        return result.IsSuccess ? Ok(result.Value) : NotFound(result.Error);
+        return result.IsSuccess ? Ok(result) : NotFound(result.Error);
 
     }
 
-
+    [HttpGet("getEmployeeBasicInfo/{id}")]
+    public async Task<IActionResult> GetEmployeeBasicInfo(int id)
+    {
+        var result = await _mediator.Send(new GetEmployeeBasicInfoQuery(id));
+        if (result.IsFailure)
+        {
+            return HandleFailureResult(result);
+        }
+        return result.IsSuccess ? Ok(result) : NotFound(result.Error);
+    }
+    [HttpGet("getEmployeeBasicInfoByCode")]
+    public async Task<IActionResult> GetEmployeeBasicInfoByCode([FromQuery] EmployeeByCodeRequest param)
+    {
+        var result = await _mediator.Send(new GetEmployeeBasicInfoByCodeQuery(param));
+        if (result.IsFailure)
+        {
+            return HandleFailureResult(result);
+        }
+        return result.IsSuccess ? Ok(result) : NotFound(result.Error);
+    }
 }
 
 public class EmployeeFileDto

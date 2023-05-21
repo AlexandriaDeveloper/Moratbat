@@ -14,6 +14,11 @@ import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { TestTableComponent } from './components/test-table/test-table.component';
+import { SearchTextComponent } from './components/table/search-text/search-text.component';
+import SortBtnComponent from './components/table/sort-btn/sort-btn.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -25,10 +30,14 @@ import { MatSortModule } from '@angular/material/sort';
     SuccessToasterComponent,
     FailToasterComponent,
     InfoToasterComponent,
-    TableComponent
+    TableComponent,
+    TestTableComponent,
+    SearchTextComponent,
+    SortBtnComponent
   ],
   imports: [
     CommonModule,
+
     AngularMaterialModule,
     ReactiveFormsModule,
     HttpClientModule,

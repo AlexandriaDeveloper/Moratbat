@@ -45,7 +45,7 @@ public class BaseApiController : ControllerBase
     string title,
     int status,
     Error error,
-    Error[]? errors = null) =>
+    Error[] errors = null) =>
     new()
     {
         Title = title,

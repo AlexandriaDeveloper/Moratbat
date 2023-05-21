@@ -1,6 +1,7 @@
 .menu.title{
   height: 103px !important;
-  background-color:rgba($color: #263238, $alpha: 1) !important;
+ // background-color:rgba($color: #263238, $alpha: 1) !important;
+  background-color:rgba(32,41,42 , 0.8) !important;
  // background-color:rgba($color: #000000, $alpha: .2) !important;
   color:#fff;
   //border-bottom:4px solid rgba(#fff,0.5) ;
@@ -22,7 +23,7 @@ text-decoration: none;
     display: flex;
     padding: 50px 40px;
     position: sticky;
-    background-color:rgba($color: #263238, $alpha: 0.8) !important;
+    background-color:rgba(32,41,42 , 0.9) !important;
 
     justify-content: space-between;
     border-bottom: 4px solid rgba(#fff,0.5);
@@ -33,6 +34,7 @@ text-decoration: none;
   text-decoration:double;
   color: #7da7bd;
   text-shadow: 10px 10px 10px rgba($color: #6f8792, $alpha: .5);
+
 }
     .spacer{
 
@@ -84,7 +86,7 @@ text-decoration: none;
 mat-sidenav{
   border-left: 4px solid  rgba($color: #fff, $alpha: .4) !important;
   width: 230px !important;
-  background-color:rgba($color: #263238, $alpha: 0.8) !important;
+  background-color:rgba(32,41,42 , 0.8) !important;
 }
 
 #video-bg {
@@ -129,7 +131,8 @@ video {
 
 }
 .active{
-  background-color: rgba(23, 28, 29,0.6);
+  //background-color: rgba(23, 28, 29,0.6);
+  background-color: rgba(230, 81, 0,0.8) !important;
 }
 
 

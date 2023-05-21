@@ -11,6 +11,7 @@ using Persistence;
 using Application.Common;
 using Application.Common.Messaging;
 using Application.Services;
+using Application.Features.Employees.Queries.GetEmployees;
 
 namespace Application.Extensions
 {
@@ -20,31 +21,12 @@ namespace Application.Extensions
         {
 
             services.AddMediatR(config =>
-              {
-                  config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-              });
+                    {
+                        config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                    });
+            services.AddAutoMapper(typeof(AutoMapperProfile));
             services.AddScoped<INPOIService, NPOIService>();
 
-            services.AddDbContext<AppDataContext>(opt =>
-            {
-                opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-            });
-
-
-
-            services.AddCors(opt =>
-            {
-
-                opt.AddPolicy("CorsPolicy", policy =>
-                {
-                    policy.AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials()
-                    .WithExposedHeaders("WWW-Authenticate")
-                    .WithOrigins("http://localhost:4200");
-                });
-            });
-            ;
 
             return services;
         }

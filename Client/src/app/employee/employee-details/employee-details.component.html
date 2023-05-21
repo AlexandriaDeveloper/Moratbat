@@ -1,4 +1,25 @@
 <div class="container">
-  <!-- <app-custome-table [displayColumns]="displayedColumns" [data]="data"></app-custome-table> -->
-<app-table></app-table>
+  <div class="employee-info">
+    <button mat-raised-button color="primary" >
+      تعديل
+      <mat-icon style="position: relative;  color:#fff;">settings</mat-icon>
+    </button>
+    <app-employee-info [id]="id" ></app-employee-info>
+  </div>
+
+<div class="content">
+
+  <mat-tab-group color="primary">
+    <mat-tab color="primary" label="بيانات الموظف الاساسيه"> Content 1
+
+<button mat-raised-button color="accent">text</button>
+<button mat-raised-button color="primary">text</button>
+<button mat-raised-button color="warn">text</button>
+    </mat-tab>
+    <mat-tab label="بيانات الموظف الماليه"> Content 2 </mat-tab>
+    <mat-tab label="حساب بنكى"> Content 3 </mat-tab>
+  </mat-tab-group>
+
+</div>
+
 </div>
