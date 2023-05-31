@@ -13,4 +13,12 @@ export class GradeService {
   getGradesByParentId(id){
     return this.http.get(this.baseUrl+'getGradesByParentId/'+id);
   }
+
+  getGradeById(id){
+    return this.http.get(this.baseUrl+'getGradeById/'+id);
+  }
+
+  postEmployeeGrade(model){
+    return this.http.post(this.baseUrl+'getGradesByParentId/',model);
+  }
 }

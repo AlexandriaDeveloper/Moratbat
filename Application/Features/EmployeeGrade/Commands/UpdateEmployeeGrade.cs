@@ -23,7 +23,7 @@ namespace Application.Features.EmployeeGrade.Commands
         {
             var empFromDb = _mapper.Map<EmployeeGradeDto, EmployeeGradeModel>(request.employeeGrade);
             _uow.EmployeeGradeRepo.Update(empFromDb);
-            var result = await _uow.SaveChangesAsync(cancellationToken);
+            await _uow.SaveChangesAsync(cancellationToken);
 
             return Result.Success();
         }

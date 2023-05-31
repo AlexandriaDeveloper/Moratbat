@@ -49,13 +49,14 @@ private  fb : FormBuilder
     this.loadGrades(this.id);
   }
   addStartDate(ev){
-   var date= moment(ev.value).format('DD-MM-YYYY');
+   var date= moment(ev.value).format();
 
    this.form.patchValue({startFrom :date})
     console.log(date);
   }
   addEndDate(ev){
-    var date= moment(ev.value).format('DD-MM-YYYY');
+
+    var date= moment(ev.value).format();
     this.form.patchValue({endAt :date})
     console.log(date);
   }
@@ -83,5 +84,6 @@ private  fb : FormBuilder
   }
   onSubmit(){
     console.log(this.form.value);
+    this.employeeGradeService.postEmployeeGrade(this.form.value).subscribe(x => this.onNoClick());
   }
 }

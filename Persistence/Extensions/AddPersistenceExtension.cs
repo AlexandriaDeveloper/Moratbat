@@ -18,7 +18,7 @@ namespace Persistence
             services.AddDbContext<AppDataContext>(opt =>
         {
             opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-            opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            //   opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
 
             //services.AddScoped<IPaginationInfo, PaginationInfo>();

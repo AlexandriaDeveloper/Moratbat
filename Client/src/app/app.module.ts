@@ -9,6 +9,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { ResponseHandlerInterceptor } from './core/interceptors/response-handler.interceptor';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +18,8 @@ import { ResponseHandlerInterceptor } from './core/interceptors/response-handler
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+  
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

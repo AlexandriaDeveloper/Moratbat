@@ -10,8 +10,11 @@ const routes: Routes = [
    loadChildren: () => import('./employee/employee.module')
    .then(m => m.EmployeeModule)
    },
-
-  { path: 'app', loadChildren: () => import('./employee-grade/employee-grade.module').then(m => m.EmployeeGradeModule) }];
+   { path: 'employee-bank',
+   loadChildren: () => import('./employee-bank/employee-bank.module')
+   .then(m => m.EmployeeBankModule)
+   },
+  { path: 'employee-grade', loadChildren: () => import('./employee-grade/employee-grade.module').then(m => m.EmployeeGradeModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

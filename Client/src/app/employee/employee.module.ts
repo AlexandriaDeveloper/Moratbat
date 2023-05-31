@@ -9,8 +9,9 @@ import { EmployeeFileUploadComponent } from './employee-file-upload/employee-fil
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeeInfoComponent } from './employee-details/employee-info/employee-info.component';
 import { EmployeePromotionsComponent } from './employee-promotions/employee-promotions.component';
-import { AddPromotionComponent } from './employee-promotions/add-promotion/add-promotion.component';
+import { AddPromotionComponent } from '../employee-grade/add-promotion/add-promotion.component';
 import { EmployeeDetailsDialogComponent } from './employee-details-dialog/employee-details-dialog.component';
+import { EmployeeBankModule } from '../employee-bank/employee-bank.module';
 
 
 @NgModule({
@@ -22,12 +23,14 @@ import { EmployeeDetailsDialogComponent } from './employee-details-dialog/employ
     EmployeeInfoComponent,
     EmployeePromotionsComponent,
     AddPromotionComponent,
-    EmployeeDetailsDialogComponent
+    EmployeeDetailsDialogComponent,
+
   ],
   imports: [
     CommonModule,
     SharedModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    EmployeeBankModule
   ]
 })
 export class EmployeeModule { }

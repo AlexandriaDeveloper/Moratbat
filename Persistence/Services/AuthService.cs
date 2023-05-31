@@ -2,30 +2,18 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
-using API.DTOs;
-using API.Helper;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Persistence.Constants;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Domain.IdentityModels;
+using Domain.Services;
 
-namespace API.Services
+namespace Persistence.Services
 {
-    public interface IAuthService
-    {
-        Task<AuthModel> RegisterAsync(RegisterModel model);
-        Task<AuthModel> LoginAsync(LoginModel model);
-
-        Task<AuthModel> CurrentUser(AppUser user);
-        Task<string> AddRoleAsync(RoleModel model);
-        Task<AuthModel> RefreshTokenAsync(string token);
-        Task LogoutAsync();
-        Task<bool> RevokeTokenAsync(string token);
-    }
-
-    public class AuthService : IAuthService
+    public class AuthService : Domain.Services.IAuthService
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly JWT _jwt;
@@ -121,11 +109,11 @@ namespace API.Services
                 roleClaims.Add(new Claim("roles", role));
             }
             var claims = new[]{
-                new Claim(ClaimTypes.NameIdentifier ,user.UserName),
+                new Claim(ClaimTypes.NameIdentifier ,user.UserName?? "" ),
                 new Claim("UUID",user.Id),
                 new Claim("displayName",user.DisplayName),
-                new Claim("profileImage",user.Email),
-                new Claim(JwtRegisteredClaimNames.Iss,_jwt.Issuer),
+                new Claim("profileImage",user.ProfileImage ??""),
+                new Claim(JwtRegisteredClaimNames.Iss,_jwt.Issuer??""),
 
 
             }

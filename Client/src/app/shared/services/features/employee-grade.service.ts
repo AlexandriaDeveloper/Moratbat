@@ -17,4 +17,8 @@ export class EmployeeGradeService {
    return this.http.get(this.baseUrl+'employeeGradeByEmployeeId',{params})
 
   }
+
+  postEmployeeGrade(model){
+    return this.http.post(this.baseUrl+'newEmployeeGrade',model);
+  }
 }

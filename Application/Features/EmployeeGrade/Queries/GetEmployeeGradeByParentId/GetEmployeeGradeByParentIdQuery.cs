@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Common;
 using Application.Common.Messaging;
+using Application.Features.Grade.Queries.GetGradeById;
 using AutoMapper;
 using Domain.Interfaces.Repository;
 using Persistence.Constants;

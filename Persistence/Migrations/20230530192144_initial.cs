@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -404,11 +404,11 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CreatedBy", "CteaedAt", "DeletedBy", "DeleteddAt", "Name", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9718), null, null, "البنك الاهلى المصرى", null, null },
-                    { 2, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9762), null, null, "البنك التجارى الدولى", null, null },
-                    { 3, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9764), null, null, " بنك مصر", null, null },
-                    { 4, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9766), null, null, " بنك قطر الوطنى الاهلى", null, null },
-                    { 5, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9768), null, null, " بنك HSBC", null, null }
+                    { 1, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(660), null, null, "البنك الاهلى المصرى", null, null },
+                    { 2, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(708), null, null, "البنك التجارى الدولى", null, null },
+                    { 3, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(710), null, null, " بنك مصر", null, null },
+                    { 4, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(712), null, null, " بنك قطر الوطنى الاهلى", null, null },
+                    { 5, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(714), null, null, " بنك HSBC", null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -416,11 +416,11 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CreatedBy", "CteaedAt", "DeletedBy", "DeleteddAt", "Name", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9884), null, null, "حسابات", null, null },
-                    { 2, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9888), null, null, "البرنامج الدولى", null, null },
-                    { 3, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9890), null, null, " مركز المؤتمرات", null, null },
-                    { 4, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9892), null, null, " شئون العاملين", null, null },
-                    { 5, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9894), null, null, "شئون عامه", null, null }
+                    { 1, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(863), null, null, "حسابات", null, null },
+                    { 2, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(867), null, null, "البرنامج الدولى", null, null },
+                    { 3, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(869), null, null, " مركز المؤتمرات", null, null },
+                    { 4, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(871), null, null, " شئون العاملين", null, null },
+                    { 5, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(873), null, null, "شئون عامه", null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -428,28 +428,28 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CreatedBy", "CteaedAt", "DeletedBy", "DeleteddAt", "Name", "ParentId", "Qanon", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9804), null, null, "موظف", null, 0, null, null },
-                    { 16, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9840), null, null, "هيئة تدريس", null, 1, null, null },
-                    { 2, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9807), null, null, "كبير", 1, 0, null, null },
-                    { 3, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9810), null, null, "درجة اولى-أ", 1, 0, null, null },
-                    { 4, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9812), null, null, "درجة اولى-ب", 1, 0, null, null },
-                    { 5, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9814), null, null, "درجة الثانيه-أ", 1, 0, null, null },
-                    { 6, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9817), null, null, "درجة الثانيه-ب", 1, 0, null, null },
-                    { 7, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9819), null, null, "درجة الثالثه-أ", 1, 0, null, null },
-                    { 8, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9822), null, null, "درجة الثالثه-ب", 1, 0, null, null },
-                    { 9, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9824), null, null, "درجة الثالثه-ج", 1, 0, null, null },
-                    { 10, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9827), null, null, "درجة الرابعه-أ", 1, 0, null, null },
-                    { 11, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9829), null, null, "درجة الرابعه-ب", 1, 0, null, null },
-                    { 12, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9831), null, null, "درجة الخامسه-أ", 1, 0, null, null },
-                    { 13, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9833), null, null, "درجة الخامسه-ب", 1, 0, null, null },
-                    { 14, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9836), null, null, "درجة السادسه-أ", 1, 0, null, null },
-                    { 15, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9838), null, null, "درجة السادسه-ب", 1, 0, null, null },
-                    { 17, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9842), null, null, "أستاذ متفرغ", 16, 1, null, null },
-                    { 18, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9845), null, null, "أستاذ ", 16, 1, null, null },
-                    { 19, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9848), null, null, "أستاذ مساعد", 16, 1, null, null },
-                    { 20, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9850), null, null, "مدرس", 16, 1, null, null },
-                    { 21, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9852), null, null, "مدرس مساعد", 16, 1, null, null },
-                    { 22, "ea158a09-f87b-4736-9e50-f0516c8ece15", new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9854), null, null, "معيد", 16, 1, null, null }
+                    { 1, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(748), null, null, "موظف", null, 0, null, null },
+                    { 16, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(816), null, null, "هيئة تدريس", null, 1, null, null },
+                    { 2, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(752), null, null, "كبير", 1, 0, null, null },
+                    { 3, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(754), null, null, "درجة اولى-أ", 1, 0, null, null },
+                    { 4, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(756), null, null, "درجة اولى-ب", 1, 0, null, null },
+                    { 5, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(789), null, null, "درجة الثانيه-أ", 1, 0, null, null },
+                    { 6, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(792), null, null, "درجة الثانيه-ب", 1, 0, null, null },
+                    { 7, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(795), null, null, "درجة الثالثه-أ", 1, 0, null, null },
+                    { 8, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(797), null, null, "درجة الثالثه-ب", 1, 0, null, null },
+                    { 9, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(799), null, null, "درجة الثالثه-ج", 1, 0, null, null },
+                    { 10, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(802), null, null, "درجة الرابعه-أ", 1, 0, null, null },
+                    { 11, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(804), null, null, "درجة الرابعه-ب", 1, 0, null, null },
+                    { 12, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(807), null, null, "درجة الخامسه-أ", 1, 0, null, null },
+                    { 13, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(809), null, null, "درجة الخامسه-ب", 1, 0, null, null },
+                    { 14, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(811), null, null, "درجة السادسه-أ", 1, 0, null, null },
+                    { 15, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(813), null, null, "درجة السادسه-ب", 1, 0, null, null },
+                    { 17, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(818), null, null, "أستاذ متفرغ", 16, 1, null, null },
+                    { 18, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(821), null, null, "أستاذ ", 16, 1, null, null },
+                    { 19, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(823), null, null, "أستاذ مساعد", 16, 1, null, null },
+                    { 20, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(825), null, null, "مدرس", 16, 1, null, null },
+                    { 21, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(827), null, null, "مدرس مساعد", 16, 1, null, null },
+                    { 22, "12990fe8-1ad9-4e30-a80e-5e664a831480", new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(829), null, null, "معيد", 16, 1, null, null }
                 });
 
             migrationBuilder.CreateIndex(

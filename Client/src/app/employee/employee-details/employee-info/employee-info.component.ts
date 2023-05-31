@@ -1,7 +1,8 @@
 import { EmployeeBasicInfo } from './../../../shared/models/Employee';
-import { Component, Input, AfterViewInit, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { EmployeeService } from '../../../shared/services/features/employee.service';
-import { ResponseObject } from 'src/app/shared/models/ResponseObject';
+import { GradeService } from 'src/app/shared/services/features/grade.service';
+import { concat, concatMap, map } from 'rxjs';
 
 @Component({
   selector: 'app-employee-info',
@@ -11,12 +12,18 @@ import { ResponseObject } from 'src/app/shared/models/ResponseObject';
 export class EmployeeInfoComponent implements OnInit {
 @Input('id') id :number
 employee:EmployeeBasicInfo;
-constructor( private employeeService : EmployeeService){}
+constructor( private employeeService : EmployeeService ,private gradeService : GradeService){}
   ngOnInit(): void {
-    this.employeeService.getEmployeeBasicInfo(this.id).subscribe((x:ResponseObject< EmployeeBasicInfo>) => {
-      this.employee=x.value;
+    // this.employeeService.getEmployeeBasicInfo(this.id).subscribe((x:ResponseObject< EmployeeBasicInfo>) => {
+    //   this.employee=x.value;
+    // });
+  let emp=  this.employeeService.getEmployeeBasicInfo(this.id);
 
-    });
+emp
+.pipe(map((p:any) => this.employee=p.value),concatMap((t:any) =>
+  this.gradeService.getGradeById(t.gradeId)
+  ) )
+.subscribe((x:any) => this.employee.gradeId=x.value.name);
   }
 
 }

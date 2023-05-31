@@ -39,5 +39,17 @@ namespace API.Controllers
             return result.IsSuccess ? Ok(result) : NotFound(result.Error);
 
         }
+
+        [HttpPost("newEmployeeGrade")]
+        public async Task<IActionResult> NewEmployeeGrade([FromBody] EmployeeGradeDto model)
+        {
+            var result = await _mediator.Send(new AddEmployeeGradeCommand(model));
+            if (result.IsFailure)
+            {
+                return HandleFailureResult(result);
+            }
+            return result.IsSuccess ? Ok(result) : NotFound(result.Error);
+
+        }
     }
 }

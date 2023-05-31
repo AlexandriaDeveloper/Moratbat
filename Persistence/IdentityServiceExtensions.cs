@@ -1,18 +1,14 @@
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
-using System.Threading.Tasks;
-using API.Helper;
-using API.Services;
-using Domain;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Persistence;
 using Domain.IdentityModels;
+using Domain.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Persistence.Services;
 
 namespace API.Extensions
 {
@@ -46,10 +42,8 @@ namespace API.Extensions
             })
              .AddRoles<IdentityRole>()
              .AddSignInManager<SignInManager<AppUser>>()
-            .AddEntityFrameworkStores<AppDataContext>()
-
-           ;
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(s: config["JWT:Key"]));
+            .AddEntityFrameworkStores<AppDataContext>();
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Key"]));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(opt =>

@@ -1,4 +1,3 @@
-
 using Domain;
 using Domain.IdentityModels;
 using Domain.Interfaces.Repository;
@@ -8,7 +7,6 @@ using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Domain.Interfaces;
 using Persistence.Specifications;
-
 namespace Persistence.Repositories
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntityModel
@@ -22,13 +20,14 @@ namespace Persistence.Repositories
             this._context = context;
             this._userManager = userManager;
             _accessor = httpContextAccessor;
-            UUID = httpContextAccessor.HttpContext.User.FindFirstValue("UUID") ?? string.Empty;
+            UUID = httpContextAccessor.HttpContext?.User.FindFirstValue("UUID") ?? string.Empty;
         }
-        public void Insert(TEntity entity)
+        public async Task Insert(TEntity entity, CancellationToken cancellationToken)
         {
             entity.CteaedAt = DateTime.UtcNow.ToLocalTime();
             entity.CreatedBy = UUID;
-            this._context.Set<TEntity>().Add(entity);
+            await this._context.Set<TEntity>().AddAsync(entity, cancellationToken);
+
         }
         public void Update(TEntity entity)
         {
@@ -75,7 +74,5 @@ namespace Persistence.Repositories
         {
             return SpecificationEvaluator<TEntity>.GetQuery(_context.Set<TEntity>().AsQueryable(), spec);
         }
-
-
     }
 }

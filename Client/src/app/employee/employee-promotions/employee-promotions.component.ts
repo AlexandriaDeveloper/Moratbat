@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddPromotionComponent } from './add-promotion/add-promotion.component';
+import { AddPromotionComponent } from '../../employee-grade/add-promotion/add-promotion.component';
 import { EmployeeGradeService } from 'src/app/shared/services/features/employee-grade.service';
 import { GradeService } from 'src/app/shared/services/features/grade.service';
 

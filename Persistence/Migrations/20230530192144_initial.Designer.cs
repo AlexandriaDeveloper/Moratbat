@@ -12,8 +12,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20230517202038_Init")]
-    partial class Init
+    [Migration("20230530192144_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,36 +105,36 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9718),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(660),
                             Name = "البنك الاهلى المصرى"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9762),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(708),
                             Name = "البنك التجارى الدولى"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9764),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(710),
                             Name = " بنك مصر"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9766),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(712),
                             Name = " بنك قطر الوطنى الاهلى"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9768),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(714),
                             Name = " بنك HSBC"
                         });
                 });
@@ -177,36 +177,36 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9884),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(863),
                             Name = "حسابات"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9888),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(867),
                             Name = "البرنامج الدولى"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9890),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(869),
                             Name = " مركز المؤتمرات"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9892),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(871),
                             Name = " شئون العاملين"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9894),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(873),
                             Name = "شئون عامه"
                         });
                 });
@@ -452,16 +452,16 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9804),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(748),
                             Name = "موظف",
                             Qanon = 0
                         },
                         new
                         {
                             Id = 2,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9807),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(752),
                             Name = "كبير",
                             ParentId = 1,
                             Qanon = 0
@@ -469,8 +469,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9810),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(754),
                             Name = "درجة اولى-أ",
                             ParentId = 1,
                             Qanon = 0
@@ -478,8 +478,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9812),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(756),
                             Name = "درجة اولى-ب",
                             ParentId = 1,
                             Qanon = 0
@@ -487,8 +487,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9814),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(789),
                             Name = "درجة الثانيه-أ",
                             ParentId = 1,
                             Qanon = 0
@@ -496,8 +496,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9817),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(792),
                             Name = "درجة الثانيه-ب",
                             ParentId = 1,
                             Qanon = 0
@@ -505,8 +505,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9819),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(795),
                             Name = "درجة الثالثه-أ",
                             ParentId = 1,
                             Qanon = 0
@@ -514,8 +514,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9822),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(797),
                             Name = "درجة الثالثه-ب",
                             ParentId = 1,
                             Qanon = 0
@@ -523,8 +523,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9824),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(799),
                             Name = "درجة الثالثه-ج",
                             ParentId = 1,
                             Qanon = 0
@@ -532,8 +532,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9827),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(802),
                             Name = "درجة الرابعه-أ",
                             ParentId = 1,
                             Qanon = 0
@@ -541,8 +541,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9829),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(804),
                             Name = "درجة الرابعه-ب",
                             ParentId = 1,
                             Qanon = 0
@@ -550,8 +550,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9831),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(807),
                             Name = "درجة الخامسه-أ",
                             ParentId = 1,
                             Qanon = 0
@@ -559,8 +559,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9833),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(809),
                             Name = "درجة الخامسه-ب",
                             ParentId = 1,
                             Qanon = 0
@@ -568,8 +568,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 14,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9836),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(811),
                             Name = "درجة السادسه-أ",
                             ParentId = 1,
                             Qanon = 0
@@ -577,8 +577,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 15,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9838),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(813),
                             Name = "درجة السادسه-ب",
                             ParentId = 1,
                             Qanon = 0
@@ -586,16 +586,16 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 16,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9840),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(816),
                             Name = "هيئة تدريس",
                             Qanon = 1
                         },
                         new
                         {
                             Id = 17,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9842),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(818),
                             Name = "أستاذ متفرغ",
                             ParentId = 16,
                             Qanon = 1
@@ -603,8 +603,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 18,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9845),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(821),
                             Name = "أستاذ ",
                             ParentId = 16,
                             Qanon = 1
@@ -612,8 +612,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 19,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9848),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(823),
                             Name = "أستاذ مساعد",
                             ParentId = 16,
                             Qanon = 1
@@ -621,8 +621,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 20,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9850),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(825),
                             Name = "مدرس",
                             ParentId = 16,
                             Qanon = 1
@@ -630,8 +630,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 21,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9852),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(827),
                             Name = "مدرس مساعد",
                             ParentId = 16,
                             Qanon = 1
@@ -639,8 +639,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 22,
-                            CreatedBy = "ea158a09-f87b-4736-9e50-f0516c8ece15",
-                            CteaedAt = new DateTime(2023, 5, 17, 23, 20, 38, 154, DateTimeKind.Local).AddTicks(9854),
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(829),
                             Name = "معيد",
                             ParentId = 16,
                             Qanon = 1

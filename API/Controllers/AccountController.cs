@@ -1,19 +1,21 @@
-using System;
+
 using System.Security.Claims;
-using API.DTOs;
+
 using API.Helper.Attributes;
 using API.Services;
-using Domain;
+
 using Domain.IdentityModels;
+using Domain.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Constants;
+using Persistence.Services;
 
 namespace API.Controllers
 {

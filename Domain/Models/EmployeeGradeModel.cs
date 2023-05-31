@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+#nullable enable
 namespace Domain
 {
     [Table("EmployeeGrade")]
@@ -21,7 +21,7 @@ namespace Domain
 
 
 
-        public EmployeeModel Employee { get; set; }
-        public GradeModel Grade { get; set; }
+        public EmployeeModel? Employee { get; set; }
+        public GradeModel? Grade { get; set; } = null;
     }
 }
