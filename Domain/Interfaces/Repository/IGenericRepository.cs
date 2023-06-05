@@ -19,8 +19,10 @@ namespace Domain.Interfaces.Repository
         Task<TEntity?> GetByIdAsync(int id);
         IQueryable<TEntity> GetQueryable();
         Task Insert(TEntity entity, CancellationToken cancellationToken);
-        public void Update(TEntity entity);
 
+        public void Update(TEntity entity);
+        void Delete(TEntity entity);
+        Task<int> CountAsyncWithSpec(ISpecification<TEntity> spec);
         Task<PaginatedResult<TEntity>> GetPagedBySpecificationAsync(ISpecification<TEntity> spec, int PageIndex, int PageSize);
     }
 }

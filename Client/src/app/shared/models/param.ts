@@ -15,9 +15,13 @@
   }
 
 
-  export class employeeParam extends param{
+  export class EmployeeParam extends param{
     name: string;
     tabCode:string;
     tegaraCode:string;
     nationalId:string;
+  }
+  export class BankParam extends param{
+    name: string;
+
   }

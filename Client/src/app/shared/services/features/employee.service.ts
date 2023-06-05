@@ -1,7 +1,7 @@
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { employeeParam } from '../../models/param';
+import { EmployeeParam } from '../../models/param';
 import { EmployeeUploadFile } from '../../models/Employee';
 
 @Injectable({
@@ -14,7 +14,7 @@ baseUrl = environment.apiUrl+'employee/';
 
   }
 
-  getEmployees (param :employeeParam){
+  getEmployees (param :EmployeeParam){
 
     if(param !== undefined){
     let params = new HttpParams();

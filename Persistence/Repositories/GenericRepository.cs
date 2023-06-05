@@ -68,7 +68,16 @@ namespace Persistence.Repositories
         {
             return _context.Set<TEntity>();
         }
+        //delete entity with check null 
+        public void Delete(TEntity entity)
+        {
+            this._context.Set<TEntity>().Remove(entity);
 
+        }
+        public async Task<int> CountAsyncWithSpec(ISpecification<TEntity> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
+        }
 
         private IQueryable<TEntity> ApplySpecification(ISpecification<TEntity> spec)
         {

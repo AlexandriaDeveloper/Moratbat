@@ -1,0 +1,23 @@
+
+<div class="container"
+>
+ <button mat-raised-button color="primary" (click)="openAddBankDialog()">
+
+  إضافة بنك
+  <mat-icon>add</mat-icon>
+
+
+</button>
+<app-table
+  #myTable
+[displayedColumns]="displayedColumns"
+ (pageChangeEvent)="pageChange($event)"
+(searchEvent)="onSearch($event)"
+(sortEvent)="onSortChange($event)"
+(onSelect)="onSelect($event)"
+(onDelete)="onDelete($event)"
+>
+</app-table>
+
+
+</div>

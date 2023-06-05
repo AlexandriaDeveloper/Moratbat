@@ -6,7 +6,7 @@ using Application.Common;
 using Application.Common.Messaging;
 using AutoMapper;
 using Domain.Interfaces.Repository;
-using Persistence.Constants;
+using Persistence.Constants.Param;
 using Persistence.Specifications.EmployeeGradeSpecs;
 
 namespace Application.Features.EmployeeGrade.Queries.GetEmployeeGradeByEmployeeId
@@ -24,7 +24,7 @@ namespace Application.Features.EmployeeGrade.Queries.GetEmployeeGradeByEmployeeI
         }
         public async Task<Result<EmployeeGradeDto>> Handle(GetEmployeeGradeByEmployeeIdQuery request, CancellationToken cancellationToken)
         {
-            var spec = new EmployeeGradeSpecification(new Persistence.Constants.EmployeeGradeParam() { EmployeeId = request.employee.EmployeeId, EndAt = null });
+            var spec = new EmployeeGradeSpecification(new Persistence.Constants.Param.EmployeeGradeParam() { EmployeeId = request.employee.EmployeeId, EndAt = null });
             spec.Includes.Add(x => x.Grade);
             spec.Includes.Add(x => x.Grade.Parent);
             spec.Includes.Add(x => x.Grade.Parent.Parent);

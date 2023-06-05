@@ -18,6 +18,7 @@ import { TestTableComponent } from './components/test-table/test-table.component
 import { SearchTextComponent } from './components/table/search-text/search-text.component';
 import SortBtnComponent from './components/table/sort-btn/sort-btn.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteDialogComponent } from './components/layout/delete-dialog/delete-dialog.component';
 
 
 
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TableComponent,
     TestTableComponent,
     SearchTextComponent,
-    SortBtnComponent
+    SortBtnComponent,
+    DeleteDialogComponent
   ],
   imports: [
     CommonModule,

@@ -49,20 +49,20 @@
             <ng-container *ngIf="displayedColumns?.editable.select">
               <button  mat-icon-button style="color:rgba(81, 155, 110,1)"  matTooltip="أختار"
               matTooltipPosition="above"
-                (click)="btnClick('select',row.id)"
+                (click)="btnClick('select',row)"
                >
                 <mat-icon>dataset</mat-icon>
               </button>
             </ng-container>
             <ng-container *ngIf="displayedColumns?.editable.edit">
               <button  mat-icon-button color="default"  matTooltip="تعديل" matTooltipPosition="above"
-              (click)="btnClick('edit',row.id)">
+              (click)="btnClick('edit',row)">
 
                 <mat-icon>edit</mat-icon>
               </button>
             </ng-container>
             <ng-container *ngIf="displayedColumns?.editable.delete">
-              <button  mat-icon-button color="warn"  matTooltip="حذف" matTooltipPosition="above"(click)="btnClick('delete',row.id)">
+              <button  mat-icon-button color="warn"  matTooltip="حذف" matTooltipPosition="above"(click)="btnClick('delete',row)">
 
                 <mat-icon>delete</mat-icon>
               </button>

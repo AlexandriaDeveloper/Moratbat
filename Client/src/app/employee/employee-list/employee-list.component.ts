@@ -1,7 +1,7 @@
 import {  MatTableConfigs } from 'src/app/shared/components/table/table-configs/mat-table-config';
 import { EmployeeService } from '../../shared/services/features/employee.service';
 import { Component, AfterViewInit, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
-import { employeeParam } from 'src/app/shared/models/param';
+import { EmployeeParam } from 'src/app/shared/models/param';
 import { SearchData, TableComponent, sortData } from 'src/app/shared/components/table/table.component';
 import { Router } from '@angular/router';
 
@@ -50,7 +50,7 @@ displayedColumns: MatTableConfigs = {
 
   ]
 }
-param :employeeParam;
+param :EmployeeParam;
   //'id' ,'name','tabCode','tegaraCode','nationalId';
   @ViewChild('myTable',{static:false}) table :TableComponent;
 data;
@@ -58,12 +58,13 @@ data;
 
 constructor(private employeeService :EmployeeService, private router : Router){}
   ngOnInit(): void {
-  this.param= new employeeParam();
+  this.param= new EmployeeParam();
   }
 
   loadData (){
  this.employeeService.getEmployees(this.param)
  .subscribe((x:any) => {
+  console.log(x);
    this.data=x
    this.table.data=x.value
    this.table.loadData(x.value)

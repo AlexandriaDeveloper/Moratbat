@@ -1,0 +1,15 @@
+
+
+
+<div *ngIf="!employeeBank" class="add-bank">
+    <button mat-raised-button color="primary" >
+      <mat-icon>add</mat-icon>
+  أضافة حساب بنك
+
+    </button>
+</div>
+<div *ngIf="employeeBank" class="employee-bank-info">
+    <div>   اسم البنك : {{employeeBank.bankName}}</div>
+    <div> اسم الفرع : {{employeeBank.branchName}}</div>
+    <div> رقم الحساب: {{employeeBank.accountNumber}}</div>
+</div>

@@ -1,0 +1,48 @@
+<!-- <div class="dialog-container delete">
+  <div mat-icon-button  class="close-button" (click)="onNoClick()">
+
+    <mat-icon>close</mat-icon>
+    <div class="title">   {{data.title}}</div>
+
+    </div>
+
+  <div class="content">
+    {{data.message}}
+  </div>
+  <div class="footer">
+
+
+</div> -->
+
+
+
+<mat-card class="dialog-container delete">
+  <mat-card-header>
+    <div mat-icon-button  class="close-button" (click)="onNoClick()">
+
+      <mat-icon>close</mat-icon>
+
+
+      </div>
+    <div>
+      <mat-card-title class="title">{{data.title}}</mat-card-title>
+
+    </div>
+
+
+  </mat-card-header>
+  <mat-card-content>
+    <mat-icon >warning_amber</mat-icon>
+    {{data.message}}
+  </mat-card-content>
+  <mat-card-actions class="footer">
+    <button mat-flat-button color="warn" (click)="delete()">حذف
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-flat-button mat-dialog-close style="background-color: #d3d0cb !important ;color: #fff;">      الغاء
+      <mat-icon>close</mat-icon>
+
+    </button>
+
+  </mat-card-actions>
+</mat-card>

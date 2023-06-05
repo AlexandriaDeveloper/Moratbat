@@ -10,6 +10,9 @@ namespace Domain.Interfaces.Repository
         IEmployeeRepository EmployeeRepo { get; }
         IEmployeeGradeRepository EmployeeGradeRepo { get; }
         IEmployeeBankRepository EmployeeBankRepo { get; }
+        IBankRepository BankRepo { get; }
+
+        IBankBranchRepository BankBranchRepo { get; }
         IGradeRepository GradeRepo { get; }
         Task<SaveChangesAsyncResult> SaveChangesAsync(CancellationToken cancellationToken);
     }

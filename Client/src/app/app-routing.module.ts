@@ -14,7 +14,9 @@ const routes: Routes = [
    loadChildren: () => import('./employee-bank/employee-bank.module')
    .then(m => m.EmployeeBankModule)
    },
-  { path: 'employee-grade', loadChildren: () => import('./employee-grade/employee-grade.module').then(m => m.EmployeeGradeModule) }];
+  { path: 'employee-grade', loadChildren: () => import('./employee-grade/employee-grade.module').then(m => m.EmployeeGradeModule) },
+
+  { path: 'bank', loadChildren: () => import('./bank/bank.module').then(m => m.BankModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

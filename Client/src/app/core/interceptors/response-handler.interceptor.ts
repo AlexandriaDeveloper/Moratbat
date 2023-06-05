@@ -27,6 +27,7 @@ export class ResponseHandlerInterceptor implements HttpInterceptor {
     catchError((err : HttpErrorResponse)=>{
 
       if(err.status !==401){
+
       this.toaster.openFailToaster(err?.error?.detail)
 
     }

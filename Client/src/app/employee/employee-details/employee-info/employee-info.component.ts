@@ -21,7 +21,13 @@ constructor( private employeeService : EmployeeService ,private gradeService : G
 
 emp
 .pipe(map((p:any) => this.employee=p.value),concatMap((t:any) =>
-  this.gradeService.getGradeById(t.gradeId)
+  {
+    if(t.gradeId)
+     return  this.gradeService.getGradeById(t.gradeId)
+    else{
+      return null;
+    }
+  }
   ) )
 .subscribe((x:any) => this.employee.gradeId=x.value.name);
   }

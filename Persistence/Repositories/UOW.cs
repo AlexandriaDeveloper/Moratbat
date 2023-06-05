@@ -14,12 +14,16 @@ namespace Persistence.Repositories
 
         private IEmployeeRepository _employeeRepository;
         private IEmployeeBankRepository _employeeBankRepository;
+        private IBankRepository _bankRepository;
+        private IBankBranchRepository _bankBranchRepository;
         private IEmployeeGradeRepository _employeeGradeRepository;
         private IGradeRepository _gradeRepository;
         //internal GenericRepository<EmployeeModel> EmployeeRepo => _employeeRepository ?? new EmployeeRepository(_context, _userManager);
 
         public IEmployeeRepository EmployeeRepo => _employeeRepository ?? new EmployeeRepository(_context, _userManager, _accessor);
-         public IEmployeeBankRepository EmployeeBankRepo => _employeeBankRepository ?? new EmployeeBankRepository(_context, _userManager, _accessor);
+        public IBankRepository BankRepo => _bankRepository ?? new BankRepository(_context, _userManager, _accessor);
+        public IBankBranchRepository BankBranchRepo => _bankBranchRepository ?? new BankBranchRepository(_context, _userManager, _accessor);
+        public IEmployeeBankRepository EmployeeBankRepo => _employeeBankRepository ?? new EmployeeBankRepository(_context, _userManager, _accessor);
         public IEmployeeGradeRepository EmployeeGradeRepo => _employeeGradeRepository ?? new EmployeeGradeRepository(_context, _userManager, _accessor);
         public IGradeRepository GradeRepo => _gradeRepository ?? new GradeRepository(_context, _userManager, _accessor);
 

@@ -7,7 +7,7 @@ using Application.Common.Messaging;
 using Application.Features.Grade.Queries.GetGradeById;
 using AutoMapper;
 using Domain.Interfaces.Repository;
-using Persistence.Constants;
+using Persistence.Constants.Param;
 using Persistence.Specifications.EmployeeGradeSpecs;
 using Persistence.Specifications.GradeSpecs;
 

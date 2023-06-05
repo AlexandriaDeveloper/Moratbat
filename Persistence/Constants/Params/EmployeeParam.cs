@@ -1,4 +1,4 @@
-namespace Persistence.Constants
+namespace Persistence.Constants.Param
 {
     public class EmployeeParam : Param
     {

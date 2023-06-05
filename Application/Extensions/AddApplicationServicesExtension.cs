@@ -12,6 +12,7 @@ using Application.Common;
 using Application.Common.Messaging;
 using Application.Services;
 using Application.Features.Employees.Queries.GetEmployees;
+using FluentValidation;
 
 namespace Application.Extensions
 {
@@ -25,6 +26,7 @@ namespace Application.Extensions
                         config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
                     });
             services.AddAutoMapper(typeof(AutoMapperProfile));
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), includeInternalTypes: true);
             services.AddScoped<INPOIService, NPOIService>();
 
 

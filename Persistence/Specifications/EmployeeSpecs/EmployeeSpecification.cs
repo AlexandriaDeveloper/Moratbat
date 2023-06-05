@@ -1,6 +1,6 @@
 
 using Domain;
-using Persistence.Constants;
+using Persistence.Constants.Param;
 
 namespace Persistence.Specifications
 {

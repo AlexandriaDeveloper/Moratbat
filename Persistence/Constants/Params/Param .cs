@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using Domain;
 using Domain.Interfaces;
 
-namespace Persistence.Constants
+namespace Persistence.Constants.Param
 {
     public class Param
     {

@@ -7,7 +7,7 @@ using Application.Features.Employees.Queries.GetEmployees;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.Constants;
+using Persistence.Constants.Param;
 
 namespace API.Controllers
 {

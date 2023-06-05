@@ -151,15 +151,15 @@ export class TableComponent implements OnInit, AfterViewInit {
 
     this.sortChangeEvent.emit(ev);
   }
-  btnClick(btnName, id) {
+  btnClick(btnName, row) {
     if (btnName === 'select') {
-      this.onSelectEvent.emit(id);
+      this.onSelectEvent.emit(row.id);
     }
     if (btnName === 'edit') {
-      this.onSelectEvent.emit(id);
+      this.onEditEvent.emit(row);
     }
     if (btnName === 'delete') {
-      this.onSelectEvent.emit(id);
+      this.onDeleteEvent.emit(row);
     }
   }
 }

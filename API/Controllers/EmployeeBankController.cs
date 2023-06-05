@@ -21,8 +21,8 @@ namespace API.Controllers
             _logger = logger;
         }
 
-    [AllowAnonymous]
-    [HttpGet("getEmployeeBank/{id}")]
+   
+    [HttpGet("getEmployeeBankAccountByEmployeeId/{id}")]
     public async Task<IActionResult> GetEmployeeBank( int id){
         var result = await _mediator.Send(new GetEmployeeBankByEmployeeIdQuery(id));
         if (result.IsFailure)

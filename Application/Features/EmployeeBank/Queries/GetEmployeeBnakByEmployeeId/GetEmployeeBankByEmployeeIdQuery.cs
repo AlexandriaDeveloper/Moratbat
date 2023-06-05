@@ -29,7 +29,7 @@ namespace Application.Features.EmployeeBank.Queries.GetEmployeeBnakByEmployeeId
 
 
               if(employeeBank is null){
-                return Result<EmployeeBankDto>.Failure(new Error("404","الموظف غير مسجل له حساب بنكى "));
+              return Result<EmployeeBankDto>.Failure(new Error("404","الموظف غير مسجل له حساب بنكى "));
               }  
 
 

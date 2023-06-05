@@ -17,8 +17,10 @@
 <button mat-raised-button color="warn">text</button>
     </mat-tab>
     <mat-tab label="بيانات الموظف الماليه"> Content 2 </mat-tab>
-    <mat-tab label="حساب بنكى"> 
-      <app-employee-bank></app-employee-bank>  
+    <mat-tab label="حساب بنكى">
+     <ng-template matTabContent>
+      <app-employee-bank-details></app-employee-bank-details>
+     </ng-template>
     </mat-tab>
   </mat-tab-group>
 

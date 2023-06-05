@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Application.Common;
 using Application.Common.Messaging;
 using AutoMapper;
-using Domain;
 using Domain.Interfaces.Repository;
-using Persistence.Constants;
+using Persistence.Constants.Param;
 using Persistence.Repositories;
 using Persistence.Specifications;
 
