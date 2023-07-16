@@ -1,0 +1,14 @@
+.dialog-container{
+  background-color: #212c20;
+  input{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+}
+.file-upload-container{
+  display: flex;
+  justify-content: center;
+  padding: 30px !important;
+  background-color: rgba(255, 255, 255, 0.5);
+}

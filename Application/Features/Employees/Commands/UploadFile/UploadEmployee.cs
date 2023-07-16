@@ -1,14 +1,11 @@
 using Application.Common.Messaging;
 using Application.Common;
-using MediatR;
 using Application.Services;
 using Microsoft.AspNetCore.Http;
 using System.Data;
-using Domain;
 using Domain.Constants;
-using Persistence;
-using Domain.Interfaces.Repository;
 using Application.Features.Employees.Queries.GetEmployees;
+using System.Security.Claims;
 
 namespace Application.Features.Employees.Commands.UploadFile
 {
@@ -18,8 +15,12 @@ namespace Application.Features.Employees.Commands.UploadFile
         private readonly INPOIService _npoi;
         private readonly IUOW _context;
 
-        public UploadEmployeeCommandHandler(INPOIService npoi, IUOW context)
+        private readonly IHttpContextAccessor _accessor;
+
+        public UploadEmployeeCommandHandler(INPOIService npoi, IUOW context, IHttpContextAccessor accessor)
         {
+            this._accessor = accessor;
+
             this._context = context;
             this._npoi = npoi;
         }
@@ -30,40 +31,54 @@ namespace Application.Features.Employees.Commands.UploadFile
 
             var tempPath = await CopyFile(request.file.File);
             DataTable dt = _npoi.ReadFile(tempPath, "Sheet1");
-            await DataTableToEntityAsync(dt, request.file);
+            var emps = DataTableToEntityAsync(dt, request.file, cancellationToken);
+            await _context.EmployeeRepo.InsertEmployees(emps);
             await _context.SaveChangesAsync(cancellationToken);
             return Result.Success();
         }
 
-        private async Task<List<EmployeeModel>> DataTableToEntityAsync(DataTable dt, EmployeeFileUploadDto request)
+        private List<EmployeeModel> DataTableToEntityAsync(DataTable dt, EmployeeFileUploadDto request, CancellationToken cancellationToken)
         {
-
             List<EmployeeModel> Employees = new List<EmployeeModel>();
+
+            // var maxId = _context.EmployeeRepo.GetQueryable().Max(t => t.Id) + 1;
             foreach (DataRow Row in dt.Rows)
             {
                 if (_context.EmployeeRepo.GetQueryable().Any(t => t.NationalId == Row.ItemArray[5].ToString()))
                     continue;
-                var employee = new EmployeeModel();
-                employee.Name = Row.ItemArray[4].ToString();
-                employee.TegaraCode = Row.ItemArray[1].ToString();
-                employee.TabCode = Row.ItemArray[0].ToString();
-                employee.NationalId = Row.ItemArray[5].ToString();
-                if (Row.ItemArray[3].ToString() == "بطاقة")
+
+                var employee = new EmployeeModel
                 {
-                    employee.PaymentMethodA = PaymentMethodEnum.Atm;
-                }
-                else
-                {
-                    employee.PaymentMethodA = PaymentMethodEnum.BankTransfer;
-                }
-                employee.Collage = request.Collage;
-                employee.Qanon = request.Qanon;
-                employee.Position = EmployeePositionEnum.Employee;
+
+                    Name = Row.ItemArray[4].ToString(),
+                    TegaraCode = Row.ItemArray[1].ToString(),
+                    TabCode = Row.ItemArray[0].ToString(),
+                    NationalId = Row.ItemArray[5].ToString(),
+                    BankAccount = new EmployeeBankAccountModel()
+                    {
+                        AccountANumber = "بطاقات",
+                        BankAId = 1,
+
+                        AccountBNumber = "بطاقات",
+                        BankBId = 1,
+                        CreatedBy = _accessor.HttpContext.User.FindFirstValue("UUID"),
+                        CteaedAt = DateTime.UtcNow.ToLocalTime(),
+
+                    },
+                    Collage = request.Collage,
+                    Qanon = request.Qanon,
+                    Position = EmployeePositionEnum.Employee
+                };
+
                 Employees.Add(employee);
+
+
             }
-            await _context.EmployeeRepo.InsertEmployees(Employees);
+
 
             return Employees;
+
+            // await _context.EmployeeRepo.InsertEmployees(Employees);
 
         }
 

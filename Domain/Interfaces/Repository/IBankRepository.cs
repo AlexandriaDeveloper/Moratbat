@@ -1,7 +1,9 @@
-namespace Domain.Interfaces.Repository
-{
-    public interface IBankRepository : IGenericRepository<BankModel>
-    {
+using Domain.Models;
 
-    }
+namespace Domain.Interfaces.Repository;
+
+public interface IBankRepository : IGenericRepository<BankModel>
+{
+
 }
+

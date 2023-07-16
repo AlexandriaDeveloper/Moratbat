@@ -10,6 +10,7 @@ namespace Persistence.Specifications
 
         public GetEmployeeBasicInfoSpecification() : base()
         {
+            AddInclude(x => x.PartTime);
             AddInclude(x => x.Grade);
         }
     }

@@ -1,7 +1,4 @@
 
-using Domain;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 public class EmployeeGradeConfiguration : IEntityTypeConfiguration<EmployeeGradeModel>
 {

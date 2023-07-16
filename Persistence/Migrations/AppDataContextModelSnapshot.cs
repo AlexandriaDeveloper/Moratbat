@@ -22,628 +22,6 @@ namespace Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.BankBranchModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BankId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BankId");
-
-                    b.ToTable("Branch");
-                });
-
-            modelBuilder.Entity("Domain.BankModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Bank");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(660),
-                            Name = "البنك الاهلى المصرى"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(708),
-                            Name = "البنك التجارى الدولى"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(710),
-                            Name = " بنك مصر"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(712),
-                            Name = " بنك قطر الوطنى الاهلى"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(714),
-                            Name = " بنك HSBC"
-                        });
-                });
-
-            modelBuilder.Entity("Domain.DepartmentModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Department");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(863),
-                            Name = "حسابات"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(867),
-                            Name = "البرنامج الدولى"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(869),
-                            Name = " مركز المؤتمرات"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(871),
-                            Name = " شئون العاملين"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(873),
-                            Name = "شئون عامه"
-                        });
-                });
-
-            modelBuilder.Entity("Domain.EmployeeBankAccountModel", b =>
-                {
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BankId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EmployeeAccountNumber")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
-                    b.Property<DateTime?>("EndAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EmployeeId", "BankId");
-
-                    b.HasIndex("BankId");
-
-                    b.ToTable("EmployeeBankAccount");
-                });
-
-            modelBuilder.Entity("Domain.EmployeeDepartmentModel", b =>
-                {
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("EndAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EmployeeId", "DepartmentId");
-
-                    b.HasIndex("DepartmentId");
-
-                    b.ToTable("EmployeeDepartment");
-                });
-
-            modelBuilder.Entity("Domain.EmployeeGradeModel", b =>
-                {
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GradeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("EndAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EmployeeId", "GradeId");
-
-                    b.HasIndex("GradeId");
-
-                    b.ToTable("EmployeeGrade");
-                });
-
-            modelBuilder.Entity("Domain.EmployeeModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Collage")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EmailAddress")
-                        .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("NationalId")
-                        .IsRequired()
-                        .HasMaxLength(14)
-                        .HasColumnType("nvarchar(14)");
-
-                    b.Property<int>("PaymentMethodA")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PaymentMethodB")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<int>("Position")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Qanon")
-                        .HasMaxLength(20)
-                        .HasColumnType("int");
-
-                    b.Property<string>("TabCode")
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<string>("TegaraCode")
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Employee");
-                });
-
-            modelBuilder.Entity("Domain.GradeModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CteaedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteddAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int?>("ParentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Qanon")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ParentId");
-
-                    b.ToTable("Grades");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(748),
-                            Name = "موظف",
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(752),
-                            Name = "كبير",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(754),
-                            Name = "درجة اولى-أ",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(756),
-                            Name = "درجة اولى-ب",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(789),
-                            Name = "درجة الثانيه-أ",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(792),
-                            Name = "درجة الثانيه-ب",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(795),
-                            Name = "درجة الثالثه-أ",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(797),
-                            Name = "درجة الثالثه-ب",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(799),
-                            Name = "درجة الثالثه-ج",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(802),
-                            Name = "درجة الرابعه-أ",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 11,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(804),
-                            Name = "درجة الرابعه-ب",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 12,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(807),
-                            Name = "درجة الخامسه-أ",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 13,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(809),
-                            Name = "درجة الخامسه-ب",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 14,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(811),
-                            Name = "درجة السادسه-أ",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 15,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(813),
-                            Name = "درجة السادسه-ب",
-                            ParentId = 1,
-                            Qanon = 0
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(816),
-                            Name = "هيئة تدريس",
-                            Qanon = 1
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(818),
-                            Name = "أستاذ متفرغ",
-                            ParentId = 16,
-                            Qanon = 1
-                        },
-                        new
-                        {
-                            Id = 18,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(821),
-                            Name = "أستاذ ",
-                            ParentId = 16,
-                            Qanon = 1
-                        },
-                        new
-                        {
-                            Id = 19,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(823),
-                            Name = "أستاذ مساعد",
-                            ParentId = 16,
-                            Qanon = 1
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(825),
-                            Name = "مدرس",
-                            ParentId = 16,
-                            Qanon = 1
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(827),
-                            Name = "مدرس مساعد",
-                            ParentId = 16,
-                            Qanon = 1
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
-                            CteaedAt = new DateTime(2023, 5, 30, 22, 21, 43, 814, DateTimeKind.Local).AddTicks(829),
-                            Name = "معيد",
-                            ParentId = 16,
-                            Qanon = 1
-                        });
-                });
-
             modelBuilder.Entity("Domain.IdentityModels.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -751,6 +129,1362 @@ namespace Persistence.Migrations
                     b.HasIndex("AppUserId");
 
                     b.ToTable("RefreshToken");
+                });
+
+            modelBuilder.Entity("Domain.Models.AccountTreeDetailsModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AccountTreeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id", "AccountTreeId");
+
+                    b.HasIndex("AccountTreeId", "Id")
+                        .IsUnique();
+
+                    b.ToTable("AccountTreeDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1002,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7123),
+                            Name = "الاجر الاساسى"
+                        },
+                        new
+                        {
+                            Id = 1003,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7128),
+                            Name = "100% من الاجر الاساسى"
+                        },
+                        new
+                        {
+                            Id = 1004,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7130),
+                            Name = "الحد الادنى"
+                        },
+                        new
+                        {
+                            Id = 1005,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7132),
+                            Name = "علاوات خاصه غير مضمومه "
+                        },
+                        new
+                        {
+                            Id = 1006,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7134),
+                            Name = "بدل علاوة اجتماعيه و اضافيه و منحه "
+                        },
+                        new
+                        {
+                            Id = 1007,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7137),
+                            Name = "علاوة دوريه 2015"
+                        },
+                        new
+                        {
+                            Id = 1008,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7139),
+                            Name = "علاوة دوريه 2016"
+                        },
+                        new
+                        {
+                            Id = 1009,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7141),
+                            Name = "علاوة دوريه 2017"
+                        },
+                        new
+                        {
+                            Id = 1010,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7143),
+                            Name = "علاوة دوريه 2017 اسثنائيه"
+                        },
+                        new
+                        {
+                            Id = 1011,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7146),
+                            Name = "علاوة دوريه 2018"
+                        },
+                        new
+                        {
+                            Id = 1012,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7147),
+                            Name = "علاوة دوريه 2018 اسثنائيه"
+                        },
+                        new
+                        {
+                            Id = 1013,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7149),
+                            Name = "علاوة دوريه 2019"
+                        },
+                        new
+                        {
+                            Id = 1014,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7151),
+                            Name = "علاوة دوريه 2020"
+                        },
+                        new
+                        {
+                            Id = 1015,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7153),
+                            Name = "علاوة دوريه 2021"
+                        },
+                        new
+                        {
+                            Id = 1016,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7155),
+                            Name = "علاوة دوريه 2022"
+                        },
+                        new
+                        {
+                            Id = 1017,
+                            AccountTreeId = 21110105,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7157),
+                            Name = "علاوة دوريه 2023"
+                        },
+                        new
+                        {
+                            Id = 2001,
+                            AccountTreeId = 21110321,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7159),
+                            Name = "50 % من الاساسى"
+                        },
+                        new
+                        {
+                            Id = 2002,
+                            AccountTreeId = 21110321,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7161),
+                            Name = "200 ج بدل جودة"
+                        },
+                        new
+                        {
+                            Id = 2004,
+                            AccountTreeId = 21110321,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7163),
+                            Name = "بدل الحد الادنى "
+                        },
+                        new
+                        {
+                            Id = 2003,
+                            AccountTreeId = 21110321,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7165),
+                            Name = "مكمل مستعبد"
+                        },
+                        new
+                        {
+                            Id = 2006,
+                            AccountTreeId = 21110328,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7167),
+                            Name = "حافز 2019"
+                        },
+                        new
+                        {
+                            Id = 2007,
+                            AccountTreeId = 21110328,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7169),
+                            Name = "حافز 2020"
+                        },
+                        new
+                        {
+                            Id = 2008,
+                            AccountTreeId = 21110328,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7171),
+                            Name = "حافز 2021"
+                        },
+                        new
+                        {
+                            Id = 2009,
+                            AccountTreeId = 21110328,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7173),
+                            Name = "حافز 2022"
+                        },
+                        new
+                        {
+                            Id = 2010,
+                            AccountTreeId = 21110328,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7175),
+                            Name = "حافز 2023"
+                        },
+                        new
+                        {
+                            Id = 2011,
+                            AccountTreeId = 21110511,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7177),
+                            Name = " علاوة غلاء معيشه"
+                        },
+                        new
+                        {
+                            Id = 2012,
+                            AccountTreeId = 21110512,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7179),
+                            Name = "علاوة الحد الادنى للحزمه الاجتماعيه"
+                        },
+                        new
+                        {
+                            Id = 4001,
+                            AccountTreeId = 21110326,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7180),
+                            Name = "حافز تعويضى 2015"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Models.AccountTreeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AccountParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountParentId");
+
+                    b.ToTable("AccountsTree");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 21110000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7029),
+                            Name = "اجور و البدلات النقديه و العينيه"
+                        },
+                        new
+                        {
+                            Id = 21110100,
+                            AccountParentId = 21110000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7033),
+                            Name = "الوظائف الدائمه"
+                        },
+                        new
+                        {
+                            Id = 21110101,
+                            AccountParentId = 21110100,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7036),
+                            Name = "الاجر الاساسى"
+                        },
+                        new
+                        {
+                            Id = 21110105,
+                            AccountParentId = 21110100,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7038),
+                            Name = "الاجر الوظيفى"
+                        },
+                        new
+                        {
+                            Id = 21110200,
+                            AccountParentId = 21110000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7040),
+                            Name = "الوظائف المؤقته"
+                        },
+                        new
+                        {
+                            Id = 21110300,
+                            AccountParentId = 21110000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7043),
+                            Name = "المكافات"
+                        },
+                        new
+                        {
+                            Id = 21110321,
+                            AccountParentId = 21110300,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7045),
+                            Name = "حوافز اخرى"
+                        },
+                        new
+                        {
+                            Id = 21110326,
+                            AccountParentId = 21110300,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7047),
+                            Name = "حافز تعويضى"
+                        },
+                        new
+                        {
+                            Id = 21110328,
+                            AccountParentId = 21110300,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7049),
+                            Name = "حافز اضافى"
+                        },
+                        new
+                        {
+                            Id = 21110400,
+                            AccountParentId = 21110000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7051),
+                            Name = "بدلات نوعيه"
+                        },
+                        new
+                        {
+                            Id = 21110500,
+                            AccountParentId = 21110000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7053),
+                            Name = "مزايا نقديه"
+                        },
+                        new
+                        {
+                            Id = 21110511,
+                            AccountParentId = 21110500,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7056),
+                            Name = "علاوة غلاء معيشه"
+                        },
+                        new
+                        {
+                            Id = 21110512,
+                            AccountParentId = 21110500,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7058),
+                            Name = "علاوة الحد الادنى للحزمه الاجتماعيه"
+                        },
+                        new
+                        {
+                            Id = 21110600,
+                            AccountParentId = 21110000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7060),
+                            Name = "مزايا عينيه"
+                        },
+                        new
+                        {
+                            Id = 21120000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7062),
+                            Name = "المزايا التأمينيه"
+                        },
+                        new
+                        {
+                            Id = 21120100,
+                            AccountParentId = 21120000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7064),
+                            Name = "حصة الحكومه فى صتدوق التأمين الاجتماعى"
+                        },
+                        new
+                        {
+                            Id = 21120101,
+                            AccountParentId = 21120100,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7066),
+                            Name = "حكومه 12 شيخوخة و عجز"
+                        },
+                        new
+                        {
+                            Id = 21120102,
+                            AccountParentId = 21120100,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7069),
+                            Name = "حكومه 1  نظام المكافاة"
+                        },
+                        new
+                        {
+                            Id = 21120200,
+                            AccountParentId = 21120000,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7071),
+                            Name = "مزايا تأمينيه اخرى"
+                        },
+                        new
+                        {
+                            Id = 21120201,
+                            AccountParentId = 21120200,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7073),
+                            Name = "حكومه 3 تأمين صحى ضد المرض"
+                        },
+                        new
+                        {
+                            Id = 21120202,
+                            AccountParentId = 21120200,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7075),
+                            Name = "حكومه 1.25  إصابة عمل"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Models.BankBranchModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BankId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankId");
+
+                    b.ToTable("Branch");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BankId = 1,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6819),
+                            Name = "مركز البطاقات"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BankId = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6823),
+                            Name = "مركز البطاقات"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BankId = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6826),
+                            Name = " باكوس"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BankId = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6828),
+                            Name = " بولكلى"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BankId = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6830),
+                            Name = "سيدى جابر"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Models.BankModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bank");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6667),
+                            Name = "البنك العربى الأفريقى"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6712),
+                            Name = "البنك الاهلى المصرى"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6714),
+                            Name = "بنك القاهرة"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6716),
+                            Name = " بنك مصر"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6718),
+                            Name = " بنك قطر الوطنى الاهلى"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6721),
+                            Name = " بنك HSBC"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Models.CollectionModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Collection");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7211),
+                            Name = "'طب -مؤقتين'"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7214),
+                            Name = "طب -دائمين"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7216),
+                            Name = " طب -مدرس"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7218),
+                            Name = " طب -أستاذ مساعد"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7220),
+                            Name = "طب-أستاذ"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Models.DepartmentModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Department");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6992),
+                            Name = "حسابات"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6997),
+                            Name = "البرنامج الدولى"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6999),
+                            Name = " مركز المؤتمرات"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7001),
+                            Name = " شئون العاملين"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(7003),
+                            Name = "شئون عامه"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeBankAccountModel", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AccountANumber")
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("AccountBNumber")
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<int?>("BankAId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BankBId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeId");
+
+                    b.HasIndex("BankAId");
+
+                    b.HasIndex("BankBId");
+
+                    b.ToTable("EmployeeBankAccount");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeBasicFinancialDataModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AccountTreeDetailsAccountTreeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AccountTreeDetailsId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FinancialSource")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Repeat")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountTreeDetailsId", "AccountTreeDetailsAccountTreeId");
+
+                    b.HasIndex("EmployeeId", "AccountTreeDetailsAccountTreeId", "AccountTreeDetailsId")
+                        .IsUnique();
+
+                    b.ToTable("EmployeeBasicFinancialData");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeCollectionModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CollectionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("CollectionId", "EmployeeId")
+                        .IsUnique();
+
+                    b.ToTable("EmployeeCollection");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeDepartmentModel", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("EndAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeId", "DepartmentId");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("EmployeeDepartment");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeGradeModel", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GradeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("EndAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeId", "GradeId");
+
+                    b.HasIndex("GradeId");
+
+                    b.ToTable("EmployeeGrade");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Collage")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmailAddress")
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("NationalId")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Qanon")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.Property<string>("TabCode")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<string>("TegaraCode")
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeePartTimeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Details")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("EmployeePartTime");
+                });
+
+            modelBuilder.Entity("Domain.Models.GradeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CteaedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteddAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Qanon")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Grades");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6860),
+                            Name = "موظف",
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6864),
+                            Name = "كبير",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6867),
+                            Name = "درجة اولى-أ",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6869),
+                            Name = "درجة اولى-ب",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6872),
+                            Name = "درجة الثانيه-أ",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6875),
+                            Name = "درجة الثانيه-ب",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6877),
+                            Name = "درجة الثالثه-أ",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6879),
+                            Name = "درجة الثالثه-ب",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6882),
+                            Name = "درجة الثالثه-ج",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6907),
+                            Name = "درجة الرابعه-أ",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6910),
+                            Name = "درجة الرابعه-ب",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6912),
+                            Name = "درجة الخامسه-أ",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6914),
+                            Name = "درجة الخامسه-ب",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6916),
+                            Name = "درجة السادسه-أ",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6918),
+                            Name = "درجة السادسه-ب",
+                            ParentId = 1,
+                            Qanon = 0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6921),
+                            Name = "هيئة تدريس",
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6923),
+                            Name = "أستاذ متفرغ",
+                            ParentId = 16,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6926),
+                            Name = "أستاذ ",
+                            ParentId = 16,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6928),
+                            Name = "أستاذ مساعد",
+                            ParentId = 16,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6930),
+                            Name = "مدرس",
+                            ParentId = 16,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6933),
+                            Name = "مدرس مساعد",
+                            ParentId = 16,
+                            Qanon = 1
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CreatedBy = "12990fe8-1ad9-4e30-a80e-5e664a831480",
+                            CteaedAt = new DateTime(2023, 7, 15, 21, 25, 31, 199, DateTimeKind.Local).AddTicks(6935),
+                            Name = "معيد",
+                            ParentId = 16,
+                            Qanon = 1
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -886,10 +1620,39 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.BankBranchModel", b =>
+            modelBuilder.Entity("Domain.IdentityModels.RefreshToken", b =>
                 {
-                    b.HasOne("Domain.BankModel", "Bank")
-                        .WithMany()
+                    b.HasOne("Domain.IdentityModels.AppUser", "AppUser")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("Domain.Models.AccountTreeDetailsModel", b =>
+                {
+                    b.HasOne("Domain.Models.AccountTreeModel", "AccountTree")
+                        .WithMany("AccountTreeDetails")
+                        .HasForeignKey("AccountTreeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountTree");
+                });
+
+            modelBuilder.Entity("Domain.Models.AccountTreeModel", b =>
+                {
+                    b.HasOne("Domain.Models.AccountTreeModel", "AccountParent")
+                        .WithMany("AccountChilds")
+                        .HasForeignKey("AccountParentId");
+
+                    b.Navigation("AccountParent");
+                });
+
+            modelBuilder.Entity("Domain.Models.BankBranchModel", b =>
+                {
+                    b.HasOne("Domain.Models.BankModel", "Bank")
+                        .WithMany("Branches")
                         .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -897,34 +1660,78 @@ namespace Persistence.Migrations
                     b.Navigation("Bank");
                 });
 
-            modelBuilder.Entity("Domain.EmployeeBankAccountModel", b =>
+            modelBuilder.Entity("Domain.Models.EmployeeBankAccountModel", b =>
                 {
-                    b.HasOne("Domain.BankBranchModel", "Bank")
-                        .WithMany("Employees")
-                        .HasForeignKey("BankId")
+                    b.HasOne("Domain.Models.BankBranchModel", "BankA")
+                        .WithMany("EmployeesA")
+                        .HasForeignKey("BankAId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("Domain.Models.BankBranchModel", "BankB")
+                        .WithMany("EmployeesB")
+                        .HasForeignKey("BankBId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("Domain.Models.EmployeeModel", "Employee")
+                        .WithOne("BankAccount")
+                        .HasForeignKey("Domain.Models.EmployeeBankAccountModel", "EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.EmployeeModel", "Employee")
-                        .WithMany("BankAccount")
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("BankA");
 
-                    b.Navigation("Bank");
+                    b.Navigation("BankB");
 
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("Domain.EmployeeDepartmentModel", b =>
+            modelBuilder.Entity("Domain.Models.EmployeeBasicFinancialDataModel", b =>
                 {
-                    b.HasOne("Domain.DepartmentModel", "Department")
+                    b.HasOne("Domain.Models.EmployeeModel", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.AccountTreeDetailsModel", "AccountTreeDetails")
+                        .WithMany()
+                        .HasForeignKey("AccountTreeDetailsId", "AccountTreeDetailsAccountTreeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountTreeDetails");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeCollectionModel", b =>
+                {
+                    b.HasOne("Domain.Models.CollectionModel", "Collection")
+                        .WithMany("EmployeeCollection")
+                        .HasForeignKey("CollectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Models.EmployeeModel", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Collection");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Domain.Models.EmployeeDepartmentModel", b =>
+                {
+                    b.HasOne("Domain.Models.DepartmentModel", "Department")
                         .WithMany("Employees")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.EmployeeModel", "Employee")
+                    b.HasOne("Domain.Models.EmployeeModel", "Employee")
                         .WithMany("Department")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -935,15 +1742,15 @@ namespace Persistence.Migrations
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("Domain.EmployeeGradeModel", b =>
+            modelBuilder.Entity("Domain.Models.EmployeeGradeModel", b =>
                 {
-                    b.HasOne("Domain.EmployeeModel", "Employee")
+                    b.HasOne("Domain.Models.EmployeeModel", "Employee")
                         .WithMany("Grade")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.GradeModel", "Grade")
+                    b.HasOne("Domain.Models.GradeModel", "Grade")
                         .WithMany("Employees")
                         .HasForeignKey("GradeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -954,22 +1761,24 @@ namespace Persistence.Migrations
                     b.Navigation("Grade");
                 });
 
-            modelBuilder.Entity("Domain.GradeModel", b =>
+            modelBuilder.Entity("Domain.Models.EmployeePartTimeModel", b =>
                 {
-                    b.HasOne("Domain.GradeModel", "Parent")
+                    b.HasOne("Domain.Models.EmployeeModel", "Employee")
+                        .WithMany("PartTime")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Domain.Models.GradeModel", b =>
+                {
+                    b.HasOne("Domain.Models.GradeModel", "Parent")
                         .WithMany()
                         .HasForeignKey("ParentId");
 
                     b.Navigation("Parent");
-                });
-
-            modelBuilder.Entity("Domain.IdentityModels.RefreshToken", b =>
-                {
-                    b.HasOne("Domain.IdentityModels.AppUser", "AppUser")
-                        .WithMany("RefreshTokens")
-                        .HasForeignKey("AppUserId");
-
-                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1023,33 +1832,54 @@ namespace Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.BankBranchModel", b =>
+            modelBuilder.Entity("Domain.IdentityModels.AppUser", b =>
+                {
+                    b.Navigation("RefreshTokens");
+                });
+
+            modelBuilder.Entity("Domain.Models.AccountTreeModel", b =>
+                {
+                    b.Navigation("AccountChilds");
+
+                    b.Navigation("AccountTreeDetails");
+                });
+
+            modelBuilder.Entity("Domain.Models.BankBranchModel", b =>
+                {
+                    b.Navigation("EmployeesA");
+
+                    b.Navigation("EmployeesB");
+                });
+
+            modelBuilder.Entity("Domain.Models.BankModel", b =>
+                {
+                    b.Navigation("Branches");
+                });
+
+            modelBuilder.Entity("Domain.Models.CollectionModel", b =>
+                {
+                    b.Navigation("EmployeeCollection");
+                });
+
+            modelBuilder.Entity("Domain.Models.DepartmentModel", b =>
                 {
                     b.Navigation("Employees");
                 });
 
-            modelBuilder.Entity("Domain.DepartmentModel", b =>
-                {
-                    b.Navigation("Employees");
-                });
-
-            modelBuilder.Entity("Domain.EmployeeModel", b =>
+            modelBuilder.Entity("Domain.Models.EmployeeModel", b =>
                 {
                     b.Navigation("BankAccount");
 
                     b.Navigation("Department");
 
                     b.Navigation("Grade");
+
+                    b.Navigation("PartTime");
                 });
 
-            modelBuilder.Entity("Domain.GradeModel", b =>
+            modelBuilder.Entity("Domain.Models.GradeModel", b =>
                 {
                     b.Navigation("Employees");
-                });
-
-            modelBuilder.Entity("Domain.IdentityModels.AppUser", b =>
-                {
-                    b.Navigation("RefreshTokens");
                 });
 #pragma warning restore 612, 618
         }

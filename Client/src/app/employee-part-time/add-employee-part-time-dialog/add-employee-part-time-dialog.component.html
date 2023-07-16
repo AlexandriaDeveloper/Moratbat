@@ -1,0 +1,49 @@
+
+<mat-card class="dialog-container">
+  <mat-card-header>
+    <div mat-icon-button  class="close-button" (click)="onNoClick()">
+      <mat-icon>close</mat-icon>
+      </div>
+    <div>
+      <mat-card-title class="title">تسجيل الموظف جزء من الوقت</mat-card-title>
+    </div>
+
+
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+      <div>
+        <mat-form-field>
+          <mat-label>تاريخ البدء</mat-label>
+          <input matInput [matDatepicker]="dp" (dateChange)="addStartDate($event.target)">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label> البيان</mat-label>
+          <input matInput placeholder="البيان"  formControlName="details">
+        </mat-form-field>
+
+
+      </div>
+      <div class="footer">
+        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">
+        حفظ
+        <mat-icon>save</mat-icon>
+      </button>
+      <button type="button" mat-raised-button color="warn" (click)="onNoClick()">
+        الغاء
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+
+    </form>
+  </mat-card-content>
+
+</mat-card>

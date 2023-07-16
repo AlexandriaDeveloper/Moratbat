@@ -2,7 +2,7 @@
 <mat-card  *ngIf="employee">
   <mat-card-header>
     <mat-card-title>اسم الموظف :  {{employee?.name}}</mat-card-title>
-    <mat-card-subtitle style="color: #fff;"> -الدرجة الوظيفيه : درجة ثالثه- مكافاة شامله</mat-card-subtitle>
+    <mat-card-subtitle style="color: #fff;">الدرجة الوظيفيه:  {{employee?.employeeGrade  }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content >
 <div class="employee-card-content">
@@ -20,7 +20,7 @@
     الرقم القومى  : {{employee.nationalId}}
    </div>
    <div>
-   الدرجة : {{employee?.gradeId}}
+   <!-- الدرجة : {{employee?.gradeId}} -->
    </div>
 
 
@@ -42,6 +42,7 @@
   <div>
    <!-- الدرجة الوظيفيه: {{employee.position}} -->
    </div>
+   <div> نظام العمل :  {{employee.inPartTime ?'جزء من الوقت':'وقت كامل'}}</div>
    <div>
    رقم الهاتف: {{employee.phoneNumber}}
    </div>

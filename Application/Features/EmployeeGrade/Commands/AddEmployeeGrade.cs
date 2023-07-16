@@ -1,10 +1,8 @@
 
-using System.Security.Claims;
-using System.Linq;
 using Application.Common.Messaging;
 using Application.Common;
 using AutoMapper;
-using Domain.Interfaces.Repository;
+
 using Microsoft.AspNetCore.Http;
 
 namespace Application.Features.EmployeeGrade.Commands
@@ -24,7 +22,7 @@ namespace Application.Features.EmployeeGrade.Commands
         }
         public async Task<Result> Handle(AddEmployeeGradeCommand request, CancellationToken cancellationToken)
         {
-            Domain.EmployeeGradeModel modelToDb = _mapper.Map<Domain.EmployeeGradeModel>(request.model);
+            EmployeeGradeModel modelToDb = _mapper.Map<EmployeeGradeModel>(request.model);
 
 
             var lastGrade = _uow.EmployeeGradeRepo.GetQueryable().Where(x => x.EndAt.HasValue == false).ToList();

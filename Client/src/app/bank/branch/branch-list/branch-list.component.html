@@ -1,1 +1,24 @@
-<p>branch-list works!</p>
+
+<div class="container"
+>
+<div class="main-header">{{bank?.name}}</div>
+ <button mat-raised-button color="primary" (click)="openAddBankBranchDialog()">
+
+  إضافة فرع
+  <mat-icon>add</mat-icon>
+
+
+</button>
+<app-table
+  #myTable
+[displayedColumns]="displayedColumns"
+ (pageChangeEvent)="pageChange($event)"
+(searchEvent)="onSearch($event)"
+(sortEvent)="onSortChange($event)"
+(onSelect)="onSelect($event)"
+(onDelete)="onDelete($event)"
+>
+</app-table>
+
+
+</div>

@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { bank } from '../../models/bank';
+import { Bank } from '../../models/bank';
 import { ResponseObject } from '../../models/ResponseObject';
 
 @Injectable({
@@ -18,8 +18,9 @@ export class BankService {
  * Returns a list of banks from the API.
  * @returns {Observable<any>} Observable that emits the list of banks.
  */
-    getBanks(param :BankParam): Observable<ResponseObject<bank>> {
-      if(param !== undefined){
+    getBanks(param :BankParam): Observable<ResponseObject<Bank>> {
+      console.log(param)
+      if(param !== undefined && param!== null){
         let params = new HttpParams();
       if(param?.name !==null && param?.name!== undefined)
             params=  params.append('name',param.name);
@@ -33,15 +34,23 @@ export class BankService {
           params= params.append('active',param.active);
           params= params.append('direction',param.direction);
         }
-      return this.http.get<ResponseObject<   bank>>(this.baseUrl+'getBanks',{params})
-      //.pipe(map((res: any) => res.value))
+      return this.http.get<ResponseObject<   Bank>>(this.baseUrl+'getBanks',{params})
+     // .pipe(map((res: any) => res.value))
       ;
     }
-    return this.http.get<ResponseObject<bank>>(this.baseUrl+'getBanks')
+    return this.http.get<ResponseObject<Bank>>(this.baseUrl+'getBanks')
      //.pipe(map((res: any) => res.value))
      ;
   }
-  addBank(model : bank){
+  getBankList(){
+    return this.http.get(this.baseUrl+'getBankList')
+    .pipe(map ((res: any) => res.value));
+  }
+  getBank(bankId : number): Observable<ResponseObject<Bank>> {
+    return this.http.get<ResponseObject<Bank>>(this.baseUrl+'getBankById/'+bankId)
+    .pipe(map((res: any) => res.value));
+  }
+  addBank(model : Bank){
     return this.http.post(this.baseUrl+'addBank',model);
   }
   deleteBank(bankId : number){

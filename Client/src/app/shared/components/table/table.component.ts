@@ -123,7 +123,6 @@ export class TableComponent implements OnInit, AfterViewInit {
         ];
       }
     }
-    console.log(this.displayedColumns);
 
     this.headerCols = this.displayedColumns.columnHeader.map((x) => x.value);
   }

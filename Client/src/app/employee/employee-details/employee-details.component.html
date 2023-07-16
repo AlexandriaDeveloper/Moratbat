@@ -1,23 +1,50 @@
 <div class="container">
   <div class="employee-info">
-    <button mat-raised-button color="primary" >
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" >
       تعديل
       <mat-icon style="position: relative;  color:#fff;">settings</mat-icon>
     </button>
-    <app-employee-info [id]="id" ></app-employee-info>
+
+<mat-menu #menu="matMenu"  color="primary">
+  <button mat-menu-item color="accent" *ngIf="!employee?.inPartTime" (click)="openPartTimeDialog()">تسجيل جزء من الوقت</button>
+  <button mat-menu-item color="accent">Item 2</button>
+</mat-menu>
+    <app-employee-info [employee]="employee" ></app-employee-info>
   </div>
 
 <div class="content">
 
   <mat-tab-group color="primary">
+
+    <!-- <mat-tab label="بيانات الموظف الماليه">
+      <app-employee-financial-details [employee]="employee"></app-employee-financial-details>
+     </mat-tab> -->
+
     <mat-tab color="primary" label="بيانات الموظف الاساسيه"> Content 1
 
 <button mat-raised-button color="accent">text</button>
 <button mat-raised-button color="primary">text</button>
 <button mat-raised-button color="warn">text</button>
     </mat-tab>
-    <mat-tab label="بيانات الموظف الماليه"> Content 2 </mat-tab>
-    <mat-tab label="حساب بنكى">
+    <mat-tab color="primary" label="تقرير صرفيه"> Content 1
+      <ng-template matTabContent>
+
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab color="primary" label="جزء من الوقت" *ngIf="employee?.hasPartTimeHistory"> Content 1
+      <ng-template matTabContent>
+        <app-employee-part-time-info [employeeId]="employee.id" [inPartTime]="employee.inPartTime" ></app-employee-part-time-info>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="بيانات الموظف الماليه">
+
+      <ng-template matTabContent>
+        <app-employee-financial-details [employee]="employee"></app-employee-financial-details>
+      </ng-template>
+
+      </mat-tab>
+    <mat-tab label="وسائل الدفع">
      <ng-template matTabContent>
       <app-employee-bank-details></app-employee-bank-details>
      </ng-template>

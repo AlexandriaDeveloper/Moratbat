@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Domain.Constants
 {
     public enum QanonEnum
@@ -5,5 +7,12 @@ namespace Domain.Constants
         Qanon81,
         Qanon49
     }
+
+    public enum FinancialSourceEnum
+    {
+        MOAZNA,
+        ZATI
+    }
+
 
 }

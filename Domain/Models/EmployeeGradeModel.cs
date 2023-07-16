@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 #nullable enable
-namespace Domain
+namespace Domain.Models
 {
     [Table("EmployeeGrade")]
     public class EmployeeGradeModel : BaseEntityModel

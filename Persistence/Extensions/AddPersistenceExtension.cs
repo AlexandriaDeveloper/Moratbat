@@ -18,6 +18,7 @@ namespace Persistence
             services.AddDbContext<AppDataContext>(opt =>
         {
             opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+            opt.EnableSensitiveDataLogging(true);
             //   opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
 

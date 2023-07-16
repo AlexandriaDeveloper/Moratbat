@@ -10,4 +10,3 @@ export const COLLAGE =[
 'كلية طب اسنان'
   ]
 
-

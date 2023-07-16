@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { BankListComponent } from './bank/bank-list/bank-list.component';
 import { BranchListComponent } from './branch/branch-list/branch-list.component';
 import { AddBankDialogComponent } from './bank/add-bank-dialog/add-bank-dialog.component';
+import { AddBranchDialogComponent } from './branch/add-branch-dialog/add-branch-dialog.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AddBankDialogComponent } from './bank/add-bank-dialog/add-bank-dialog.c
     BankComponent,
     BankListComponent,
     BranchListComponent,
-    AddBankDialogComponent
+    AddBankDialogComponent,
+    AddBranchDialogComponent
   ],
   imports: [
     CommonModule,

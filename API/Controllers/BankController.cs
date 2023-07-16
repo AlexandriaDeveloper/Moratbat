@@ -1,3 +1,4 @@
+
 using Application.Features.Bank.Commands.AddBank;
 using Application.Features.Bank.Commands.DeleteBank;
 using Application.Features.Bank.Queries.GetBanks;
@@ -9,7 +10,6 @@ using Persistence.Constants.Param;
 namespace API.Controllers
 {
 
-    [AllowAnonymous]
     public class BankController : BaseApiController
     {
         public BankController(IMediator mediator) : base(mediator)
@@ -27,10 +27,22 @@ namespace API.Controllers
             return result.IsSuccess ? Ok(result) : NotFound(result.Error);
 
         }
-        [HttpGet("getBankById")]
-        public async Task<IActionResult> GetBankBy([FromQuery] BankParam param)
+
+        [HttpGet("getBankList")]
+        public async Task<IActionResult> GetBankList()
         {
-            var result = await _mediator.Send(new GetBankByQuery(param));
+            var result = await _mediator.Send(new GetBankListQuery());
+            if (result.IsFailure)
+            {
+                return HandleFailureResult(result);
+            }
+            return result.IsSuccess ? Ok(result) : NotFound(result.Error);
+
+        }
+        [HttpGet("getBankById/{bankId}")]
+        public async Task<IActionResult> GetBankBy(int bankId)
+        {
+            var result = await _mediator.Send(new GetBankByQuery(bankId));
             if (result.IsFailure)
             {
                 return HandleFailureResult(result);

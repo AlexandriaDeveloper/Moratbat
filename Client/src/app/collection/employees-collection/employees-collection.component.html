@@ -1,0 +1,43 @@
+<!--
+<button mat-raised-button color="primary" (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+  اضافة موظف الى المجموعه
+</button>
+
+<button mat-raised-button color="primary" (click)="downloadFile()">
+  <mat-icon>download</mat-icon>
+تنزيل ملف
+</button> -->
+<button mat-raised-button [matMenuTriggerFor]="menu" color="primary">
+  <mat-icon>settings</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="openAddEmployeeToCollectionDialog()">
+    <mat-icon>add</mat-icon>
+    اضافة موظف الى المجموعه
+  </button>
+  <button mat-menu-item (click)="downloadFile()" >
+    <mat-icon>download</mat-icon>
+    تنزيل ملف جديد
+  </button>
+  <button mat-menu-item (click)="uploadFile()">
+    <mat-icon>upload</mat-icon>
+    تحميل ملف
+  </button>
+
+  <button mat-menu-item (click)="copyCollectionDialog()">
+    <mat-icon>add</mat-icon>
+    نسخ المجموعة الى مجموعه جديدة
+  </button>
+</mat-menu>
+
+<app-table
+#myTable
+[displayedColumns]="displayedColumns"
+ (pageChangeEvent)="pageChange($event)"
+(searchEvent)="onSearch($event)"
+(sortEvent)="onSortChange($event)"
+(onSelect)="onSelect($event)"
+(onDelete)="onDelete($event)"
+>
+</app-table>

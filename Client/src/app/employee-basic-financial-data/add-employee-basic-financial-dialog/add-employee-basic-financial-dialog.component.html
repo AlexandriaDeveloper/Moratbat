@@ -1,0 +1,108 @@
+
+
+<mat-card class="dialog-container">
+  <mat-card-header>
+    <div mat-icon-button  class="close-button" (click)="onNoClick()">
+      <mat-icon>close</mat-icon>
+      </div>
+    <div>
+      <mat-card-title class="title">أضافةعنصرالى موظف</mat-card-title>
+    </div>
+
+
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field>
+          <mat-label>الكود الاقتصادى</mat-label>
+          <mat-select (selectionChange)="getAccountChildData($event)">
+            <mat-option *ngFor="let parentItems of parentBudgetItems" [value]="parentItems.id">
+              {{parentItems.name}}  - {{parentItems.id}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>الحساب الفرعى</mat-label>
+          <mat-select (selectionChange)="getAccountSubChildData($event)">
+            <mat-option *ngFor="let childAccount of childAccountTrees" [value]="childAccount.id">
+              {{childAccount.name}} -{{childAccount.id}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>نوع الموازنه </mat-label>
+          <mat-select (selectionChange)="getAccountSubSubChildData($event)"  formControlName="accountTreeDetailsAccountTreeId">
+            <mat-option *ngFor="let childAccount of subChildAccountTrees" [value]="childAccount.id">
+              {{childAccount.name}} -{{childAccount.id}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label> الحساب الفرعى </mat-label>
+          <mat-select formControlName="accountTreeDetailsId" >
+            <mat-option *ngFor="let childAccount of subSubChildAccountTree" (selectionChange)="getAccountSubSub2ChildData($event)" [value]="childAccount.id">
+              {{childAccount.name}} -{{childAccount.id}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>نوع الموازنه </mat-label>
+          <mat-select (selectionChange)="getfinancialSource($event)" formControlName="financialSource">
+            <mat-option *ngFor="let fSource of financialSource" [value]="fSource.id">
+              {{fSource.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+      <div style="display: flex;  ">
+
+        <mat-form-field  >
+          <input matInput  [matDatepicker]="myDatepicker2" placeholder="تاريخ الصرف"  (dateChange)="changeDate($event.target)" formControlName="startDate" >
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker2"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker2></mat-datepicker>
+        </mat-form-field>
+
+        </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput type="number" placeholder="المبلغ"  formControlName="amount">
+        </mat-form-field>
+
+
+      </div>
+      <div class="footer">
+        <button mat-raised-button color="primary" [disabled]="form.invalid" type="submit">
+        حفظ
+        <mat-icon>save</mat-icon>
+      </button>
+      <button mat-raised-button color="warn" (click)="onNoClick()" type="button">
+        الغاء
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+
+    </form>
+  </mat-card-content>
+
+</mat-card>

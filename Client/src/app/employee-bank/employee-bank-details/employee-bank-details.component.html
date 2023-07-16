@@ -1,15 +1,29 @@
 
 
 
-<div *ngIf="!employeeBank" class="add-bank">
-    <button mat-raised-button color="primary" >
+<div class="" >
+    <button mat-raised-button color="primary" (click)="openAddEmployeeBankAccountDialog()">
       <mat-icon>add</mat-icon>
   أضافة حساب بنك
 
     </button>
 </div>
 <div *ngIf="employeeBank" class="employee-bank-info">
-    <div>   اسم البنك : {{employeeBank.bankName}}</div>
-    <div> اسم الفرع : {{employeeBank.branchName}}</div>
-    <div> رقم الحساب: {{employeeBank.accountNumber}}</div>
+
+<div  style="display: flex;justify-content: space-around; width: 90%;">
+  <div>
+      <h4>وسيلة الدفع الاولى </h4>
+    <div>   اسم البنك : {{employeeBank.bankAName}}</div>
+    <div> اسم الفرع : {{employeeBank.branchAName}}</div>
+    <div> رقم الحساب: {{employeeBank.accountANumber}}</div>
+
+  </div>
+  <div>
+    <h4>وسيلة الدفع الثانيه </h4>
+    <div>   اسم البنك : {{employeeBank.bankBName}}</div>
+      <div> اسم الفرع : {{employeeBank.branchBName}}</div>
+      <div> رقم الحساب: {{employeeBank.accountBNumber}}</div>
+  </div>
+</div>
+
 </div>

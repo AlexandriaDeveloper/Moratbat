@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Domain
+namespace Domain.Models
 {
 
 #nullable enable
@@ -14,7 +14,7 @@ namespace Domain
         public int BankId { get; set; }
 
         public BankModel? Bank { get; set; }
-        public virtual ICollection<EmployeeBankAccountModel>? Employees { get; set; }
-
+        public virtual ICollection<EmployeeBankAccountModel>? EmployeesA { get; set; }
+        public virtual ICollection<EmployeeBankAccountModel>? EmployeesB { get; set; }
     }
 }

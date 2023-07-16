@@ -1,11 +1,32 @@
-export interface bank{
-  name : string
-  branchesCount?:number
-  branches?:branch[]
+export interface Bank{
+  id?:number;
+  name : string;
+  branchesCount?:number;
+  branches?:BankBranch[];
 }
 
-export interface branch{
+export interface BankBranch{
+  id?:number
   name : string;
-  bank?:bank,
+  bank?:Bank,
   bankId:number
+}
+
+
+export interface EmployeeBank {
+
+    employeeId? : number;
+    bankAId: number,
+    bankAName: string,
+    branchAId: number,
+    branchAName:string,
+    accountANumber: string ,
+    bankBId: number,
+    bankBName:string,
+    branchBId: number
+    branchBName: string,
+    accountBNumber: string,
+
+
+
 }

@@ -83,7 +83,8 @@ document.createElement('video');
 
 
   <div class="layout-container">
-    <ng-content></ng-content>
+     <ng-content></ng-content>
+
   </div>
 
 
@@ -108,10 +109,9 @@ document.createElement('video');
     <a mat-list-item [routerLink]="['/employee']" routerLinkActive="active" > <mat-icon>people</mat-icon> الموظفين  </a>
     <a mat-list-item [routerLink]="['/order']"  routerLinkActive="active" >  <mat-icon>receipt</mat-icon> ملفات الاوامر  </a>
     <a mat-list-item  [routerLink]="['/bank']" routerLinkActive="active" > <mat-icon>home_work</mat-icon> البنوك  </a>
-    <a mat-list-item  [routerLink]="['/bank']" routerLinkActive="active" >
-      <img src="./../../../../../assets/images/svg/bill.svg" alt="" style="width: 20px;height: 20px;position: relative;top: 5px;">
-       22البنوك  </a>
-
+    <a mat-list-item  [routerLink]="['/collection']" routerLinkActive="active" > <mat-icon>group</mat-icon>  مجموعه التعيين  </a>
+    <a mat-list-item  [routerLink]="['/accounts-tree']" routerLinkActive="active" ><mat-icon>settings</mat-icon>
+       ادارة العناصر  </a>
   </mat-nav-list>
 </mat-sidenav>
 

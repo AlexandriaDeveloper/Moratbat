@@ -23,7 +23,10 @@ namespace Application.Features.Bank.Commands.AddBank
         public async Task<Result> Handle(AddBankCommand request, CancellationToken cancellationToken)
         {
             BankModel bank = _mapper.Map<BankModel>(request.Bank);
-
+            bank.Branches.Add(new BankBranchModel()
+            {
+                Name = "مركز البطاقات"
+            });
             await _uow.BankRepo.Insert(bank, cancellationToken);
             var result = await _uow.SaveChangesAsync(cancellationToken);
             if (result.IsFailure)

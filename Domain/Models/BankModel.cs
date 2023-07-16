@@ -1,9 +1,10 @@
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Domain
+namespace Domain.Models
 {
-    #nullable enable
+#nullable enable
     [Table("Bank")]
     public class BankModel : BaseEntityModel
     {

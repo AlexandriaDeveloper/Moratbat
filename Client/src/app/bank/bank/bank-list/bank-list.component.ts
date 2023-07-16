@@ -6,7 +6,7 @@ import { MatTableConfigs } from 'src/app/shared/components/table/table-configs/m
 import { BankParam } from 'src/app/shared/models/param';
 import { MatDialog } from '@angular/material/dialog';
 import { AddBankDialogComponent } from '../add-bank-dialog/add-bank-dialog.component';
-import { bank } from 'src/app/shared/models/bank';
+import { Bank } from 'src/app/shared/models/bank';
 import { ResponseObject } from 'src/app/shared/models/ResponseObject';
 import { DeleteDialogComponent } from 'src/app/shared/components/layout/delete-dialog/delete-dialog.component';
 
@@ -37,7 +37,7 @@ export class BankListComponent implements OnInit, AfterViewInit {
     ]
   }
   @ViewChild('myTable',{static:false}) table :TableComponent;
-data:ResponseObject<bank>;
+data:ResponseObject<Bank>;
 param : BankParam ;
 constructor(private bankService: BankService, private router : Router,public dialog: MatDialog) {
 

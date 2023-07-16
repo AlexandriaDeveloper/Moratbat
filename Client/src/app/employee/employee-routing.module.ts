@@ -8,7 +8,7 @@ import { EmployeePromotionsComponent } from './employee-promotions/employee-prom
 
 const routes: Routes = [
   { path: '', component: EmployeeComponent,data:{animation : 'slideInAnimation'}   },
-  { path: 'list', component: EmployeeListComponent },
+  { path: 'list', component: EmployeeListComponent,data:{animation : 'slideInAnimation'}  },
   { path: 'details/:id', component: EmployeeDetailsComponent,data:{animation : 'slideInAnimation'} },
   { path: 'file-upload', component: EmployeeFileUploadComponent,data:{animation : 'slideInAnimation'} },
   { path: 'employee-prmotion', component: EmployeePromotionsComponent,data:{animation : 'slideInAnimation'} },

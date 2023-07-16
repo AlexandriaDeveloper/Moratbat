@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Domain
+namespace Domain.Models
 {
-    public class BaseEntityModel
+    public abstract class BaseEntityModel
     {
 
         public virtual int Id { get; set; }

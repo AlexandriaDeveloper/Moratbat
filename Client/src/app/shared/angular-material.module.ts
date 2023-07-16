@@ -23,6 +23,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
+
 //import { MatMomentDateModule } from '@angular/material-moment-adapter';
 @NgModule({
   declarations: [],
@@ -54,7 +56,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule
+
    // MatMomentDateModule
   ]
 })

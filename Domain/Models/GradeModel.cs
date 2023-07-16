@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Domain.Constants;
 
-namespace Domain
+namespace Domain.Models
 {
 #nullable enable
     public class GradeModel : BaseEntityModel

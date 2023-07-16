@@ -28,6 +28,7 @@ namespace Persistence.Repositories
             entity.CreatedBy = UUID;
             await this._context.Set<TEntity>().AddAsync(entity, cancellationToken);
 
+
         }
         public void Update(TEntity entity)
         {
@@ -35,6 +36,7 @@ namespace Persistence.Repositories
             entity.UpdatedBy = UUID;
             this._context.Set<TEntity>().Update(entity);
         }
+
         public async Task<List<TEntity>> GetAllAsync()
         {
             return await this._context.Set<TEntity>().ToListAsync();
@@ -73,6 +75,11 @@ namespace Persistence.Repositories
         {
             this._context.Set<TEntity>().Remove(entity);
 
+
+        }
+        public async Task DeleteAsync(int id)
+        {
+            await _context.Set<TEntity>().Where(x => x.Id == id).ExecuteDeleteAsync();
         }
         public async Task<int> CountAsyncWithSpec(ISpecification<TEntity> spec)
         {

@@ -29,9 +29,6 @@ namespace Application.Features.Employees.Queries.GetEmployeeBasicInfo
             var spec = new GetEmployeeBasicInfoSpecification();
             spec.Criteries.Add(x => x.Id == request.employeeId);
             EmployeeModel employee = await _uow.EmployeeRepo.GetByWithSpecAsync(spec);
-
-
-
             if (employee == null)
             {
                 return Result.Failure<EmployeeDto>(new Error("404", "عفوا الموظف غير موجود بقاعدة البيانات "));

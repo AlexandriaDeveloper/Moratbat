@@ -1,0 +1,52 @@
+<div class="custom-container" *ngIf="employee">
+
+  <div style="display: flex;  margin-left: 60px;">
+
+    <mat-form-field  >
+      <input matInput  [matDatepicker]="myDatepicker2" placeholder="تاريخ الصرف"  (dateChange)="changeDate($event.target)"  [value]="peekDate">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker2"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker2></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" (click)="openAddAccountTreeDialog()">
+       <mat-icon>add</mat-icon> اضف عنصر الى الموظف
+      </button>
+
+
+    </div>
+
+<div class="employee-financial-data-info">
+  <div *ngIf="employee?.qanon=== 'Qanon81'" class="employee-financial-data">
+
+    <div *ngFor="let item of response" class="">
+      <button mat-icon-button color="primary" type="button" (click)="getAccountDetailsData(item.accountTreeName)"><mat-icon>settings</mat-icon></button>
+       {{item.accountTreeName}} :  {{item.amount |currency: 'EGP'}}
+
+
+    </div>
+
+
+
+  </div>
+
+  <div *ngIf="employee?.qanon=== 'Qanon47'" class="employee-financial-data">
+
+    <div>
+      الاجر الاساسى :
+
+    </div>
+    <div>
+     البدلات :
+
+    </div>
+    <div>
+      الحافز التعويضى:
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</div>

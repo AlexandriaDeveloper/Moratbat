@@ -11,5 +11,19 @@ namespace Persistence.Repositories
         public EmployeeBankRepository(AppDataContext context, UserManager<AppUser> userManager, IHttpContextAccessor httpContextAccessor) : base(context, userManager, httpContextAccessor)
         {
         }
+
+        public EmployeeBankAccountModel? GetEmployeeBankAccount(int employeeId, int bankId)
+        {
+            EmployeeModel emp = _context.Employees.Where(x => x.Id == employeeId)
+            .Include(x => x.BankAccount).FirstOrDefault();
+
+            if (emp != null)
+            {
+                return emp.BankAccount;
+            }
+
+            return null;
+
+        }
     }
 }

@@ -10,10 +10,15 @@ namespace Domain.Interfaces.Repository
         IEmployeeRepository EmployeeRepo { get; }
         IEmployeeGradeRepository EmployeeGradeRepo { get; }
         IEmployeeBankRepository EmployeeBankRepo { get; }
+        IEmployeePartTimeRepository EmployeePartTimeRepo { get; }
+        IEmployeeBasicFinancialDataRepository EmployeeBasicFinancialDataRepo { get; }
         IBankRepository BankRepo { get; }
-
+        ICollectionRepository CollectionRepo { get; }
+        IEmployeeCollectionRepository EmployeeCollectionRepo { get; }
         IBankBranchRepository BankBranchRepo { get; }
         IGradeRepository GradeRepo { get; }
+        IAccountTreeRepository AccountTreeRepo { get; }
+        IAccountTreeDetailsRepository AccountTreeDetailsRepo { get; }
         Task<SaveChangesAsyncResult> SaveChangesAsync(CancellationToken cancellationToken);
     }
 

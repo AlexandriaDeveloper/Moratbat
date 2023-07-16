@@ -183,3 +183,21 @@ color: #000000 !important;}
     }
 
 }
+
+.mat-mdc-menu-panel.mat-mdc-menu-panel {
+
+  background-color: rgba(33, 42, 43,1) !important;
+  color: #000000 !important;
+  mat-icon{
+    color: #fff;
+  }
+      transition: .4s ease-in-out;
+  .mat-mdc-menu-item:hover{
+    transition: .4s ease-in-out;
+    background-color: rgb(230, 81, 0)!important;
+    mat-icon{
+      font-weight: bolder;
+    }
+  }
+
+}

@@ -1,0 +1,46 @@
+<!-- <p>{{data|json}}</p> -->
+
+
+
+<mat-card class="dialog-container">
+  <mat-card-header>
+    <div mat-icon-button  class="close-button" (click)="onNoClick()">
+      <mat-icon>close</mat-icon>
+      </div>
+    <div>
+      <mat-card-title class="title"> بيانات  {{data.accountName}}</mat-card-title>
+    </div>
+
+
+  </mat-card-header>
+  <mat-card-content  >
+
+    <table class="table table-striped" >
+      <thead>
+        <tr style="border: 10px solid black;">
+          <th>
+            اسم العنصر
+          </th>
+          <th>
+            المبلغ
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of data.data.wazifiData"  >
+          <td >    {{item.accountName}}</td>
+          <td>{{item.amount |currency: 'EGP'}}</td>
+        </tr>
+        <tr style="font-size: 22px; font-weight: bold">
+          <td>الاجمالى</td>
+          <td>{{data.data.totalAmount |currency: 'EGP'}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  </mat-card-content>
+
+</mat-card>

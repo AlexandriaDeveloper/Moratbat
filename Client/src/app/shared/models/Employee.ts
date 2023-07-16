@@ -10,7 +10,9 @@ export interface EmployeeBasicInfo {
   "gradeId":number;
   "phoneNumber":string;
   "emailAddress":string;
-
+  employeeGrade?:string;
+  inPartTime?:boolean;
+  hasPartTimeHistory:boolean;
 
   /**        public string Qanon { get; set; }
         public string GradeId { get; set; }

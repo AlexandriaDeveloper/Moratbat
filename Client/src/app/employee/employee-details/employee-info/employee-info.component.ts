@@ -10,26 +10,11 @@ import { concat, concatMap, map } from 'rxjs';
   styleUrls: ['./employee-info.component.scss']
 })
 export class EmployeeInfoComponent implements OnInit {
-@Input('id') id :number
-employee:EmployeeBasicInfo;
-constructor( private employeeService : EmployeeService ,private gradeService : GradeService){}
-  ngOnInit(): void {
-    // this.employeeService.getEmployeeBasicInfo(this.id).subscribe((x:ResponseObject< EmployeeBasicInfo>) => {
-    //   this.employee=x.value;
-    // });
-  let emp=  this.employeeService.getEmployeeBasicInfo(this.id);
 
-emp
-.pipe(map((p:any) => this.employee=p.value),concatMap((t:any) =>
-  {
-    if(t.gradeId)
-     return  this.gradeService.getGradeById(t.gradeId)
-    else{
-      return null;
-    }
-  }
-  ) )
-.subscribe((x:any) => this.employee.gradeId=x.value.name);
+@Input('employee') employee:EmployeeBasicInfo;
+constructor( ){}
+  ngOnInit(): void {
+
   }
 
 }

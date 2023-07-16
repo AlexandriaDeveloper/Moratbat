@@ -1,0 +1,33 @@
+.table-container{
+
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  background-color: rgba(32,41,42,0.0) !important;
+
+  table{
+    th{
+      font-weight: bolder;
+      color: #000;
+      background-color:rgb(144 148 149) !important;
+    }
+    .mat-mdc-cell{
+      color: #fff !important;
+    }
+    .mat-mdc-row{
+      transition: 0.4s ease-out;
+
+      background-color: rgba(32,41,42,1) !important;
+      &:hover{
+        background-color: rgba(32,41,42,0.2) !important;
+        .mat-mdc-cell{
+
+        transition: 0.4s ease-in;
+         color: #000 !important;
+        cursor: pointer;
+      }
+      }
+    }
+
+  }
+}

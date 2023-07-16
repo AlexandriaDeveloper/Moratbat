@@ -1,15 +1,23 @@
 .add-bank{
   display:  flex;
   justify-content: center;
+ // height: 100%;
+  align-items: center;
+
 }
 .employee-bank-info{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+ // height: 100%;
   div{
-    padding: 20px;
+    padding: 2px;
     font-size: 22px;
     font-family: Cairo;
+    text-shadow: 10px 10px 10px rgb(0, 0, 0);
+
   }
+
 }
+

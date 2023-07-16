@@ -1,0 +1,25 @@
+.dialog-container{
+  background-color: #212c20;
+  input{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+}
+table{
+  width: 100%;
+  tr{
+    th{
+      background-color: rgba($color: #000000, $alpha: 0.3);
+      border:  2px solid  rgba($color: #fff, $alpha: 0.3) !important;
+      text-align: center;
+      padding: 10px;
+
+    }
+    td{
+    border:  2px solid  rgba($color: #fff, $alpha: 0.3) !important;
+    padding: 5px;
+    text-align: center;
+    }
+  }
+}

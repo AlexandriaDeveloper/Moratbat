@@ -1,4 +1,4 @@
-using Domain;
+global using Domain.Models;
 using Domain.IdentityModels;
 using Domain.Interfaces.Repository;
 using Microsoft.AspNetCore.Identity;

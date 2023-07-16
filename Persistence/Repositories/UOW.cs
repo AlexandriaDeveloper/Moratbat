@@ -1,3 +1,4 @@
+using System.Transactions;
 using Domain.IdentityModels;
 using Domain.Interfaces.Repository;
 using EntityFramework.Exceptions.Common;
@@ -13,20 +14,31 @@ namespace Persistence.Repositories
         private readonly AppDataContext _context;
 
         private IEmployeeRepository _employeeRepository;
+        private ICollectionRepository _collectionRepository;
+        private IEmployeeCollectionRepository _employeeCollectionRepository;
         private IEmployeeBankRepository _employeeBankRepository;
+        private IEmployeePartTimeRepository _employeePartTimeRepository;
         private IBankRepository _bankRepository;
         private IBankBranchRepository _bankBranchRepository;
         private IEmployeeGradeRepository _employeeGradeRepository;
+        private IEmployeeBasicFinancialDataRepository _employeeBasicFinancialDataRepository;
         private IGradeRepository _gradeRepository;
+        private IAccountTreeRepository _accountTreeRepository;
+        private IAccountTreeDetailsRepository _accountTreeDetailRepository;
         //internal GenericRepository<EmployeeModel> EmployeeRepo => _employeeRepository ?? new EmployeeRepository(_context, _userManager);
 
         public IEmployeeRepository EmployeeRepo => _employeeRepository ?? new EmployeeRepository(_context, _userManager, _accessor);
+        public ICollectionRepository CollectionRepo => _collectionRepository ?? new CollectionRepository(_context, _userManager, _accessor);
+        public IEmployeeCollectionRepository EmployeeCollectionRepo => _employeeCollectionRepository ?? new EmployeeCollectionRepository(_context, _userManager, _accessor);
         public IBankRepository BankRepo => _bankRepository ?? new BankRepository(_context, _userManager, _accessor);
         public IBankBranchRepository BankBranchRepo => _bankBranchRepository ?? new BankBranchRepository(_context, _userManager, _accessor);
         public IEmployeeBankRepository EmployeeBankRepo => _employeeBankRepository ?? new EmployeeBankRepository(_context, _userManager, _accessor);
+        public IEmployeePartTimeRepository EmployeePartTimeRepo => _employeePartTimeRepository ?? new EmployeePartTimeRepository(_context, _userManager, _accessor);
         public IEmployeeGradeRepository EmployeeGradeRepo => _employeeGradeRepository ?? new EmployeeGradeRepository(_context, _userManager, _accessor);
+        public IEmployeeBasicFinancialDataRepository EmployeeBasicFinancialDataRepo => _employeeBasicFinancialDataRepository ?? new EmployeeBasicFinancialDataRepository(_context, _userManager, _accessor);
         public IGradeRepository GradeRepo => _gradeRepository ?? new GradeRepository(_context, _userManager, _accessor);
-
+        public IAccountTreeRepository AccountTreeRepo => _accountTreeRepository ?? new AccountTreeRepository(_context, _userManager, _accessor);
+        public IAccountTreeDetailsRepository AccountTreeDetailsRepo => _accountTreeDetailRepository ?? new AccountTreeDetailRepository(_context, _userManager, _accessor);
 
 
         private readonly UserManager<AppUser> _userManager;
@@ -47,7 +59,10 @@ namespace Persistence.Repositories
 
             try
             {
+
+                using var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
                 await _context.SaveChangesAsync(cancellationToken);
+                transactionScope.Complete();
 
             }
             catch (UniqueConstraintException)

@@ -1,0 +1,16 @@
+
+<button mat-raised-button color="primary" (click)="openDialog('add',null)">
+  <mat-icon>add</mat-icon>
+  تكوين مجموعه جديدة
+</button>
+<app-table
+#myTable
+[displayedColumns]="displayedColumns"
+ (pageChangeEvent)="pageChange($event)"
+(searchEvent)="onSearch($event)"
+(sortEvent)="onSortChange($event)"
+(onSelect)="onSelect($event)"
+(onEdit)="onEdit($event)"
+(onDelete)="onDelete($event)"
+>
+</app-table>

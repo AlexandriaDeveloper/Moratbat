@@ -15,6 +15,8 @@ namespace Application.Features.Employees.Queries.GetEmployees
         public int? GradeId { get; set; }
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }
+        public bool InPartTime { get; set; }
+        public bool HasPartTimeHistory { get; set; }
 
     }
 

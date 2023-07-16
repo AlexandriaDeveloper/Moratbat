@@ -1,0 +1,107 @@
+
+<mat-card class="dialog-container">
+  <mat-card-header>
+    <div mat-icon-button  class="close-button" (click)="onNoClick()">
+      <mat-icon>close</mat-icon>
+      </div>
+    <div>
+      <mat-card-title class="title">أضافة بنك جديد</mat-card-title>
+    </div>
+
+
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+
+      <div >
+<div style="border: 1px solid grey; padding: 5px;">
+  <div>
+    <label>وسيله الدفع الاولى </label>
+    <mat-form-field>
+      <mat-label>اختار البنك</mat-label>
+      <mat-select  formControlName="bankAId"  (selectionChange)="onBankChange('A',$event.value)"   [value]="employeeBank.bankAId">
+        <mat-option *ngFor="let bank of bankListA" [value]="bank.id">
+          {{bank.name}}
+
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label>اختار الفرع</mat-label>
+      <mat-select formControlName="branchAId" (selectionChange)="onBankBranchChange('A',$event.value)"    [value]="employeeBank.branchAId">
+        <mat-option *ngFor="let branch of branchesA" [value]="branch.id">
+          {{branch.name}}
+
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>رقم الحساب</mat-label>
+      <input matInput placeholder="رقم الحساب"  [value]="employeeBank.accountANumber" formControlName="accountANumber">
+    </mat-form-field>
+
+
+  </div>
+
+</div>
+
+        <div style="border: 1px solid grey; padding: 5px;">
+          <label>وسيله الدفع الثانيه </label>
+          <div>
+            <mat-form-field>
+              <mat-label>اختار البنك</mat-label>
+              <mat-select  formControlName="bankBId"  (selectionChange)="onBankChange('B',$event.value)"
+               [value]="employeeBank.bankBId">
+                <mat-option *ngFor="let bank of bankListB" [value]="bank.id">
+                  {{bank.name}}
+
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field>
+              <mat-label>اختار الفرع</mat-label>
+              <mat-select formControlName="branchBId" (selectionChange)="onBankBranchChange('B',$event.value)"
+               [value]="employeeBank.branchBId">
+                <mat-option *ngFor="let branch of branchesB" [value]="branch.id">
+                  {{branch.name}}
+
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>رقم الحساب</mat-label>
+              <input matInput placeholder="رقم الحساب"  [value]="employeeBank.accountBNumber" formControlName="accountBNumber">
+            </mat-form-field>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">
+        حفظ
+        <mat-icon>save</mat-icon>
+      </button>
+      <button type="button" mat-raised-button color="warn" (click)="onNoClick()"
+      >
+        الغاء
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+
+    </form>
+  </mat-card-content>
+
+</mat-card>

@@ -1,27 +1,34 @@
 
-<div class="card-items">
-<div class="card-container">
+<div class="card-items" >
+  <div class="card-container" >
 
 
   <div class="card-item">
-    <app-card-icons [title]="' بيانات الموظفين'" [description]="'البحث عن بيانات الموظفين '"  [icon]="'employee-info'" [link]="'list'"></app-card-icons>
-</div>
-<div class="card-item">
-  <app-card-icons [title]="'رفع بيانات الموظف'" [description]="'تحميل بيانات الموظفين بملف اكسيل'"  [icon]="'upload'"  [link]="'file-upload'"></app-card-icons>
+    <app-card-icons
+    [title]="' بيانات الموظفين'"
+    [description]="'البحث عن بيانات الموظفين '"
+    [icon]="'employee-info'"
+    [link]="'list'">
+    </app-card-icons>
+  </div>
+  <div class="card-item">
+    <app-card-icons
+    [title]="'رفع بيانات الموظف'"
+    [description]="'تحميل بيانات الموظفين بملف اكسيل'"
+    [icon]="'upload'"
+    [link]="'file-upload'">
+    </app-card-icons>
   </div>
 
-<div class="card-item">
-<app-card-icons [title]="'ترقيات'" [description]="'ترقيات الموظفين'"  [icon]="'employee-promotion'" [link]="'employee-prmotion'"></app-card-icons>
-</div>
-<div class="card-item">
-<app-card-icons [title]="'رفع بيانات الموظف'" [description]="'تحميل بيانات الموظفين بملف اكسيل'"  [icon]="'employee'" (click)="openInfoSnack()"></app-card-icons>
-</div>
-<div class="card-item">
-<app-card-icons [title]="'رفع بيانات الموظف'" [description]="'تحميل بيانات الموظفين بملف اكسيل'"  [icon]="'bill'"   (click)="openSuccessSnack()"></app-card-icons>
-</div>
-<div class="card-item">
-<app-card-icons [title]="'رفع بيانات الموظف'" [description]="'تحميل بيانات الموظفين بملف اكسيل'"  [icon]="'calender'" (click)="openFailSnack()"></app-card-icons>
-</div>
-</div>
+  <div class="card-item">
+    <app-card-icons
+    [title]="'بيانت الموظف الماليه'"
+    [description]="'تحميل بيانات الموظفين الماليه بملف اكسيل'"
+    [icon]="'employee-financial-data'"
+    [link]="'/employee-basic-financial-data/upload'">
+    </app-card-icons>
+  </div>
+
+  </div>
 </div>
 
